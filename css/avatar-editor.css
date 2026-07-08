@@ -1,0 +1,138 @@
+/* Avatar crop & resize editor */
+.avatar-editor-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  background: rgba(11, 29, 51, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.avatar-editor-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.avatar-editor-modal {
+  width: min(420px, 100%);
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.avatar-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar-editor-head h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.avatar-editor-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.avatar-editor-stage-wrap {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background: var(--surface-alt);
+}
+
+.avatar-editor-stage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  border: 3px solid var(--yellow);
+  cursor: grab;
+  touch-action: none;
+}
+
+.avatar-editor-stage.dragging {
+  cursor: grabbing;
+}
+
+.avatar-editor-stage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  user-select: none;
+  pointer-events: none;
+  max-width: none;
+}
+
+.avatar-editor-controls {
+  padding: 0 20px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.avatar-editor-control label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.avatar-editor-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--yellow);
+}
+
+.avatar-editor-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.avatar-editor-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.avatar-editor-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+[data-theme="dark"] .avatar-editor-modal {
+  background: #0f1f35;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .avatar-editor-head h3,
+[data-theme="dark"] .avatar-editor-control label {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .avatar-editor-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+}

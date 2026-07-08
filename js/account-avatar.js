@@ -25,12 +25,27 @@
       .toUpperCase();
   }
 
+  function avatarDisplayUrl(url) {
+    if (!url) return null;
+    if (url.includes("/media/avatars/") && window.BSAuth?.user?.uid) {
+      const base = window.BSConfig?.API_BASE?.replace(/\/$/, "") || "";
+      return `${base}/auth/avatars/${window.BSAuth.user.uid}/?v=${Date.now()}`;
+    }
+    return url;
+  }
+
   function applyAvatarToEl(avatarEl, removeBtn, user) {
-    const url = user?.avatarUrl;
+    const url = avatarDisplayUrl(user?.avatarUrl);
     if (url) {
-      avatarEl.innerHTML = `<img src="${url}" alt="" class="profile-hero-avatar-img">`;
+      avatarEl.innerHTML = `<img src="${url}" alt="" class="profile-hero-avatar-img" referrerpolicy="no-referrer">`;
       avatarEl.classList.add("dash-account-avatar--photo", "profile-hero-avatar--photo");
       removeBtn?.classList.remove("hidden");
+      const img = avatarEl.querySelector("img");
+      img.onerror = () => {
+        avatarEl.textContent = initialsFor(user);
+        avatarEl.classList.remove("dash-account-avatar--photo", "profile-hero-avatar--photo");
+        removeBtn?.classList.add("hidden");
+      };
     } else {
       avatarEl.textContent = initialsFor(user);
       avatarEl.classList.remove("dash-account-avatar--photo", "profile-hero-avatar--photo");
@@ -68,9 +83,14 @@
     }
   }
 
-  async function uploadAvatar(file) {
+  async function uploadAvatar(file, crop) {
     const fd = new FormData();
-    fd.append("avatar", file);
+    fd.append("avatar", file, "avatar.jpg");
+    if (crop) {
+      fd.append("cropX", String(crop.cropX ?? 0));
+      fd.append("cropY", String(crop.cropY ?? 0));
+      fd.append("cropSize", String(crop.cropSize ?? 1));
+    }
     const me = await window.BSAPI.upload("/auth/me/avatar/", fd);
     window.BSAuth.user = { ...window.BSAuth.user, avatarUrl: me.avatarUrl || null };
     applyAvatar(window.BSAuth.user);
@@ -84,22 +104,30 @@
     window.showToast?.("Profile photo removed.");
   }
 
-  widgets.forEach(({ input, removeBtn }) => {
-    input?.addEventListener("change", async () => {
-      const file = input.files?.[0];
-      if (!file) return;
-      if (file.size > 2 * 1024 * 1024) {
-        window.showToast?.("Image must be under 2 MB.", "info");
-        input.value = "";
-        return;
-      }
-      try {
+  async function handleFilePick(file, input) {
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      window.showToast?.("Image must be under 5 MB.", "info");
+      if (input) input.value = "";
+      return;
+    }
+    try {
+      if (window.BSAvatarEditor?.open) {
+        const { blob, crop } = await window.BSAvatarEditor.open(file);
+        await uploadAvatar(blob, crop);
+      } else {
         await uploadAvatar(file);
-      } catch (e) {
+      }
+    } catch (e) {
+      if (e.message !== "cancelled") {
         window.showToast?.(e.message || "Upload failed.", "info");
       }
-      input.value = "";
-    });
+    }
+    if (input) input.value = "";
+  }
+
+  widgets.forEach(({ input, removeBtn }) => {
+    input?.addEventListener("change", () => handleFilePick(input.files?.[0], input));
 
     removeBtn?.addEventListener("click", async () => {
       if (!confirm("Remove your profile photo?")) return;
@@ -120,5 +148,5 @@
     refreshMe();
   }
 
-  window.BSAvatar = { applyAvatar, refreshMe };
+  window.BSAvatar = { applyAvatar, refreshMe, avatarDisplayUrl };
 })();

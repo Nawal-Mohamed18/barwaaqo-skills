@@ -212,11 +212,16 @@ window.BSAuth = {
     document.querySelectorAll("[data-user-initials]").forEach((el) => {
       if (el.classList.contains("profile-hero-avatar")) return;
 
-      const url = this.user?.avatarUrl;
+      const url = window.BSAvatar?.avatarDisplayUrl?.(this.user?.avatarUrl) || this.user?.avatarUrl;
       const parent = el.closest(".dash-user, .dash-account-avatar");
       if (url && parent) {
-        el.innerHTML = `<img src="${url}" alt="" class="dash-user-photo">`;
+        el.innerHTML = `<img src="${url}" alt="" class="dash-user-photo" referrerpolicy="no-referrer">`;
         parent.classList.add("has-photo");
+        const img = el.querySelector("img");
+        img.onerror = () => {
+          el.textContent = initials;
+          parent.classList.remove("has-photo");
+        };
       } else {
         el.textContent = initials;
         parent?.classList.remove("has-photo");

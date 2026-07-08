@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/admin-motion.css">
   <link rel="stylesheet" href="css/dash-motion.css">
   <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/avatar-editor.css">
   <script src="js/theme.js"></script>
 </head>
 <body class="dashboard-body dash-animated profile-page" data-page="profile">
@@ -52,7 +53,7 @@
       <div class="profile-hero-banner-inner">
         <div class="profile-hero-avatar-wrap">
           <div class="profile-hero-avatar" id="accountAvatar" data-user-initials>?</div>
-          <label class="profile-hero-avatar-edit" for="avatarInput" title="Change photo">
+          <label class="profile-hero-avatar-edit" for="avatarInput" title="Change photo — crop & resize">
             <i class="fa-solid fa-camera"></i>
             <input type="file" id="avatarInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
           </label>
@@ -75,7 +76,7 @@
       <div class="admin-profile-hero-inner">
         <div class="profile-hero-avatar-wrap">
           <div class="profile-hero-avatar admin-profile-avatar" id="adminAccountAvatar" data-user-initials>?</div>
-          <label class="profile-hero-avatar-edit" for="adminAvatarInput" title="Change photo">
+          <label class="profile-hero-avatar-edit" for="adminAvatarInput" title="Change photo — crop & resize">
             <i class="fa-solid fa-camera"></i>
             <input type="file" id="adminAvatarInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
           </label>
@@ -167,6 +168,7 @@
   <script src="js/lib/auth-guard.js" data-require="verified"></script>
   <script src="js/dash-shell.js"></script>
   <script src="js/dash-page.js"></script>
+  <script src="js/lib/avatar-editor.js"></script>
   <script src="js/account-avatar.js"></script>
   <script src="js/profile.js"></script>
 </body>

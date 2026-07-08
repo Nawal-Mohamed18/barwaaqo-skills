@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
@@ -27,9 +28,18 @@ class UserSerializer(serializers.ModelSerializer):
         if not obj.avatar:
             return None
         request = self.context.get("request")
+        path = f"/api/auth/avatars/{obj.pk}/"
         if request:
-            return request.build_absolute_uri(obj.avatar.url)
-        return obj.avatar.url
+            url = request.build_absolute_uri(path)
+        else:
+            api_base = settings.FRONTEND_URL.rstrip("/")
+            url = path
+        version = ""
+        try:
+            version = str(int(obj.avatar.storage.get_modified_time(obj.avatar.name).timestamp()))
+        except Exception:
+            version = str(obj.pk)
+        return f"{url}?v={version}"
 
 
 class ProfileUpdateSerializer(serializers.Serializer):
