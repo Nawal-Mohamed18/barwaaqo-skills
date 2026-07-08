@@ -1,9 +1,9 @@
-# Render Blueprint — deploy the Django API (free tier).
-# Connect this repo at https://dashboard.render.com → New → Blueprint
+# Render Blueprint — one-click: https://render.com/deploy?repo=https://github.com/Nawal-Mohamed18/barwaaqo-skills
 services:
   - type: web
     name: barwaaqo-skills-api
     runtime: python
+    plan: free
     rootDir: backend
     buildCommand: bash build.sh
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
@@ -22,9 +22,9 @@ services:
       - key: DJANGO_ALLOWED_HOSTS
         value: barwaaqo-skills-api.onrender.com
       - key: CORS_ORIGINS
-        sync: false
+        value: https://nawal-mohamed18.github.io
       - key: FRONTEND_URL
-        sync: false
+        value: https://nawal-mohamed18.github.io/barwaaqo-skills/
 
 databases:
   - name: barwaaqo-db
