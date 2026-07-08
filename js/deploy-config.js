@@ -1,6 +1,6 @@
 /** Production URLs — update GITHUB_USER if your GitHub username differs */
 (function () {
-  const GITHUB_USER = "bintmohamed417";
+  const GITHUB_USER = "Nawal-Mohamed18";
   const REPO = "barwaaqo-skills";
 
   window.BSDeploy = {

@@ -13,13 +13,13 @@ if ($LASTEXITCODE -ne 0) {
 $user = (& $gh api user -q .login).Trim()
 Write-Host "GitHub user: $user"
 
-# Update deploy URLs if username differs from bintmohamed417
-if ($user -ne "bintmohamed417") {
+# Update deploy URLs if username differs from Nawal-Mohamed18
+if ($user -ne "Nawal-Mohamed18") {
   Write-Host "Updating deploy URLs for $user ..."
   $files = @("js/deploy-config.js", "js/lib/config.js", "README.md", "index.html")
   foreach ($f in $files) {
     if (Test-Path $f) {
-      (Get-Content $f -Raw) -replace "bintmohamed417", $user | Set-Content $f -NoNewline
+      (Get-Content $f -Raw) -replace "Nawal-Mohamed18", $user | Set-Content $f -NoNewline
     }
   }
   git add js/deploy-config.js js/lib/config.js README.md index.html

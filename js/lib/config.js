@@ -4,8 +4,8 @@
   const isLocal = host === "localhost" || host === "127.0.0.1" || host === "";
 
   const deploy = window.BSDeploy || {
-    GITHUB_REPO: "https://github.com/bintmohamed417/barwaaqo-skills",
-    LIVE_SITE: "https://bintmohamed417.github.io/barwaaqo-skills/",
+    GITHUB_REPO: "https://github.com/Nawal-Mohamed18/barwaaqo-skills",
+    LIVE_SITE: "https://Nawal-Mohamed18.github.io/barwaaqo-skills/",
     API_BASE: "https://barwaaqo-skills-api.onrender.com/api",
   };
 

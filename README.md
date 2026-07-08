@@ -6,8 +6,8 @@ Online learning platform for Somalia and the diaspora — navy + yellow ed-tech 
 
 | | URL |
 |---|---|
-| **Website** | https://bintmohamed417.github.io/barwaaqo-skills/ |
-| **GitHub** | https://github.com/bintmohamed417/barwaaqo-skills |
+| **Website** | https://Nawal-Mohamed18.github.io/barwaaqo-skills/ |
+| **GitHub** | https://github.com/Nawal-Mohamed18/barwaaqo-skills |
 | **API** | https://barwaaqo-skills-api.onrender.com/api/health/ |
 
 ## Stack
@@ -47,8 +47,8 @@ Enable in repo **Settings → Pages → Source: GitHub Actions**.
 1. Sign in at [render.com](https://render.com)
 2. **New → Blueprint** and connect this repo
 3. Set environment variables after deploy:
-   - `CORS_ORIGINS` = `https://bintmohamed417.github.io`
-   - `FRONTEND_URL` = `https://bintmohamed417.github.io/barwaaqo-skills/`
+   - `CORS_ORIGINS` = `https://Nawal-Mohamed18.github.io`
+   - `FRONTEND_URL` = `https://Nawal-Mohamed18.github.io/barwaaqo-skills/`
 
 See [DOCUMENTATION.md](DOCUMENTATION.md) for full technical docs.
 
