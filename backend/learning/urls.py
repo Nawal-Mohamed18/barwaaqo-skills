@@ -10,6 +10,7 @@ from .admin_api import (
     AdminUserListView,
     AdminUserManageView,
 )
+from .chat_views import SharshabeelChatView
 from .lms_views import AdminCourseListView, AdminCourseManageView, LMSOverviewView
 from .views import (
 
@@ -67,6 +68,8 @@ urlpatterns = [
     path("watch/", SaveWatchView.as_view(), name="learning-watch"),
 
     path("visits/", RecordVisitView.as_view(), name="learning-visits"),
+
+    path("sharshabeel/", SharshabeelChatView.as_view(), name="learning-sharshabeel"),
 
     path("lesson-complete/", CompleteLessonView.as_view(), name="learning-lesson-complete"),
 

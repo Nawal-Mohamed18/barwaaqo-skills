@@ -65,6 +65,7 @@ window.BSAuth = {
     this._callbacks.forEach((cb) => cb(this.user));
     this._callbacks = [];
     this._updateNav();
+    this._loadSharshabeel();
   },
 
   getUid() {
@@ -81,6 +82,33 @@ window.BSAuth = {
 
   isAdmin() {
     return this.user?.role === "admin";
+  },
+
+  isTeacher() {
+    return this.user?.role === "teacher";
+  },
+
+  _loadSharshabeel() {
+    if (window.__bsSharshabeelLoading || document.body?.dataset?.page === "design") return;
+    window.__bsSharshabeelLoading = true;
+
+    if (!document.getElementById("sharshabeel-css")) {
+      const link = document.createElement("link");
+      link.id = "sharshabeel-css";
+      link.rel = "stylesheet";
+      link.href = "css/sharshabeel.css";
+      document.head.appendChild(link);
+    }
+
+    if (!document.getElementById("sharshabeel-js")) {
+      const script = document.createElement("script");
+      script.id = "sharshabeel-js";
+      script.src = "js/lib/sharshabeel.js";
+      document.body.appendChild(script);
+    } else {
+      window.BSSharshabeel?.mount?.();
+      window.BSSharshabeel?.refresh?.();
+    }
   },
 
   async signUp(name, email, password) {
@@ -197,6 +225,7 @@ window.BSAuth = {
 
     window.BSNav?.applyPublicNav?.();
     window.BSSiteFooter?.mount?.();
+    window.BSSharshabeel?.refresh?.();
 
     const page = document.body?.dataset?.page;
     if (page && window.BSAppShell?.mountSidebar) {
