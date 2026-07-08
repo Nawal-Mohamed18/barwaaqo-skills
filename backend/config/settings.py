@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-only-change-in-production-barwaaqo-2026")
 DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() == "true"
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "barwaaqo-skills-api.onrender.com").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -105,7 +105,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     o.strip() for o in os.getenv(
         "CORS_ORIGINS",
-        "http://localhost:8080,http://127.0.0.1:8080,http://localhost:5500,http://127.0.0.1:5500,http://localhost:5173,http://127.0.0.1:5173",
+        "https://nawal-mohamed18.github.io",
     ).split(",")
     if o.strip()
 ]
@@ -122,7 +122,7 @@ EMAIL_BACKEND = os.getenv(
 )
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@barwaaqo.skills")
 
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:8080")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://nawal-mohamed18.github.io/barwaaqo-skills/")
 MAX_ENROLLED_COURSES = 3
 PREMIUM_COURSE_PRICE_CENTS = int(os.getenv("PREMIUM_COURSE_PRICE_CENTS", "4900"))
 

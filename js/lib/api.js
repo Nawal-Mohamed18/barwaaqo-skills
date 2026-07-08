@@ -84,24 +84,15 @@ window.BSAPI = {
   },
 
   async healthCheck() {
-    const bases = [
-      window.BSConfig.API_BASE,
-      `http://127.0.0.1:8765/api`,
-      `http://localhost:8765/api`,
-    ].filter((v, i, a) => v && a.indexOf(v) === i);
+    const base = window.BSConfig.API_BASE;
+    if (!base) return false;
 
-    for (const base of bases) {
-      try {
-        const url = `${base.replace(/\/$/, "")}/health/`;
-        const res = await fetch(url, { method: "GET" });
-        if (res.ok) {
-          window.BSConfig.API_BASE = base.replace(/\/$/, "");
-          return true;
-        }
-      } catch {
-        /* try next */
-      }
+    try {
+      const url = `${base.replace(/\/$/, "")}/health/`;
+      const res = await fetch(url, { method: "GET" });
+      return res.ok;
+    } catch {
+      return false;
     }
-    return false;
   },
 };

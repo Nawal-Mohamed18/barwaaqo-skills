@@ -6,7 +6,7 @@
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "cmd",
-      "runtimeArgs": ["/c", "echo Open http://localhost:8080/index.html after both terminals start."],
+      "runtimeArgs": ["/c", "echo Open https://nawal-mohamed18.github.io/barwaaqo-skills/ after deploy."],
       "preLaunchTask": "Run Barwaaqo Skills (API + Frontend)"
     },
     {

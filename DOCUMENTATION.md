@@ -10,12 +10,14 @@
 ## 1. Architecture
 
 ```
-Frontend (static, port 8080)
+Frontend (GitHub Pages)
+  https://nawal-mohamed18.github.io/barwaaqo-skills/
   HTML pages + js/lib/* modules
         │
         │  JWT Bearer + JSON REST
         ▼
-Backend (Django 5, port 8765)
+Backend (Django 5 on Render)
+  https://barwaaqo-skills-api.onrender.com/api/
   accounts │ courses │ learning │ payments*
 ```
 
@@ -144,25 +146,19 @@ py manage.py createsuperuser
 
 ---
 
-## 7. Development
+## 7. Deployment
 
-### Backend
+### Website
 
-```bash
-cd backend
-py -m pip install -r requirements.txt
-py manage.py migrate
-py manage.py seed_courses
-py manage.py runserver 8765
-```
+Live URL: https://nawal-mohamed18.github.io/barwaaqo-skills/
 
-### Frontend
+Pushes to `main` auto-deploy via `.github/workflows/pages.yml`.
 
-```bash
-py -m http.server 8080
-```
+### API
 
-Open `http://localhost:8080`
+Live URL: https://barwaaqo-skills-api.onrender.com/api/
+
+Deploy via `render.yaml` Blueprint on Render.
 
 ### Environment
 

@@ -2,38 +2,15 @@
 
 REST backend for auth, courses, enrollments, progress, quizzes, and certificates.
 
-## Setup
+## Live API
 
-```bash
-cd backend
-py -m pip install -r requirements.txt
-py manage.py migrate
-py manage.py seed_courses
-py manage.py createsuperuser   # optional — Django admin + platform admin role
-py manage.py runserver 8765
-```
+**Base URL:** https://barwaaqo-skills-api.onrender.com/api/
 
-API runs at **http://127.0.0.1:8765/api/**
+**Health check:** https://barwaaqo-skills-api.onrender.com/api/health/
 
 ## Frontend
 
-Serve the static site separately (port 8080):
-
-```bash
-cd ..
-py -m http.server 8080
-```
-
-Open **http://localhost:8080/index.html**
-
-## Standard ports
-
-| Service | Port |
-|---------|------|
-| Django API | **8765** |
-| Static frontend | **8080** |
-
-Override API URL in browser: `localStorage.setItem('barwaaqo_api_base', 'http://127.0.0.1:8765/api')`
+**Live site:** https://nawal-mohamed18.github.io/barwaaqo-skills/
 
 ## Core API endpoints
 
@@ -61,13 +38,11 @@ Override API URL in browser: `localStorage.setItem('barwaaqo_api_base', 'http://
 
 ## Admin access
 
-Set user `role=admin` or `is_staff=True` in Django admin, then open **lms.html** in the frontend.
+Set user `role=admin` or `is_staff=True` in Django admin, then open **lms.html** on the live site.
 
-## Dev notes
+## Environment
 
-- Verification emails print to the Django terminal.
-- JWT stored in `localStorage` as `barwaaqo_access_token`.
-- Copy `.env.example` to `.env` for `FRONTEND_URL`, `CORS_ORIGINS`, etc.
+Copy `.env.example` to `.env` and set `DJANGO_SECRET_KEY`, `FRONTEND_URL`, `CORS_ORIGINS`, etc.
 
 ## Re-seed courses
 
