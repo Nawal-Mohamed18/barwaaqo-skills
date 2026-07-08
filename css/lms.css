@@ -1399,6 +1399,62 @@
   margin-bottom: 20px;
 }
 
+.admin-profile-hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.admin-profile-hero-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-profile-hero-body h1 {
+  font-size: 1.85rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.admin-profile-hero-body p {
+  color: var(--text-muted);
+}
+
+.admin-profile-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.admin-profile-avatar {
+  width: 88px;
+  height: 88px;
+  font-size: 1.75rem;
+  background: rgba(11, 29, 51, 0.06);
+  border-color: var(--yellow);
+  color: var(--navy);
+}
+
+[data-theme="dark"] .admin-profile-avatar {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--yellow);
+}
+
+@media (max-width: 640px) {
+  .admin-profile-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-profile-hero-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
 .admin-topbar--profile {
   margin-bottom: 8px;
 }

@@ -72,12 +72,24 @@
     </section>
 
     <section class="admin-hero admin-hero--profile hidden" id="profileHeroAdmin">
-      <div>
-        <p class="admin-hero-label">Administrator account</p>
-        <h1 id="adminProfileName">—</h1>
-        <p id="adminProfileEmail">—</p>
+      <div class="admin-profile-hero-inner">
+        <div class="profile-hero-avatar-wrap">
+          <div class="profile-hero-avatar admin-profile-avatar" id="adminAccountAvatar" data-user-initials>?</div>
+          <label class="profile-hero-avatar-edit" for="adminAvatarInput" title="Change photo">
+            <i class="fa-solid fa-camera"></i>
+            <input type="file" id="adminAvatarInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+          </label>
+        </div>
+        <div class="admin-profile-hero-body">
+          <p class="admin-hero-label">Administrator account</p>
+          <h1 id="adminProfileName">—</h1>
+          <p id="adminProfileEmail">—</p>
+        </div>
+        <div class="admin-profile-hero-actions">
+          <button type="button" class="admin-btn-outline hidden" id="adminAvatarRemoveBtn">Remove photo</button>
+          <span class="admin-hero-badge"><i class="fa-solid fa-shield-halved"></i> Platform admin</span>
+        </div>
       </div>
-      <span class="admin-hero-badge"><i class="fa-solid fa-shield-halved"></i> Platform admin</span>
     </section>
 
     <div class="admin-account-grid hidden" id="profileAdminGrid">

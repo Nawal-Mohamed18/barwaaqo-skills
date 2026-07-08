@@ -55,6 +55,8 @@
     if (nameField) nameField.value = user.name || "";
     if (emailField) emailField.value = user.email || "";
 
+    window.BSAvatar?.applyAvatar?.(user);
+
     document.getElementById("dashMenuBtnAdmin")?.addEventListener("click", () => {
       document.getElementById("dashMenuBtn")?.click();
     });
@@ -224,8 +226,9 @@
     if (!name) return;
     try {
       const me = await window.BSAPI.patch("/auth/me/", { name });
-      window.BSAuth.user = { ...window.BSAuth.user, name: me.name };
+      window.BSAuth.user = { ...window.BSAuth.user, name: me.name, avatarUrl: me.avatarUrl || null };
       window.BSAuth._updateNav?.();
+      window.BSAvatar?.applyAvatar?.(window.BSAuth.user);
       document.getElementById("adminProfileName").textContent = me.name;
       window.showToast?.("Account updated.");
     } catch (err) {
