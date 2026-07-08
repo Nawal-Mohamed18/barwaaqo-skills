@@ -4,6 +4,7 @@
   display: flex;
   min-height: 100vh;
   background: var(--surface-alt);
+  overflow-x: clip;
 }
 
 /* ---- Sidebar — navy + yellow (matches homepage) ---- */
@@ -837,6 +838,9 @@
 @media (max-width: 480px) {
   .dash-stats { grid-template-columns: 1fr; }
   .dash-continue-thumb { width: 100%; height: 140px; }
+  .dash-main { padding: 16px 12px 32px; }
+  .dash-topbar { flex-wrap: wrap; gap: 10px; }
+  .dash-search { min-width: 0; }
 }
 
 /* ---- Course learn hub ---- */
@@ -971,9 +975,32 @@
   font-size: clamp(1.75rem, 4vw, 2.25rem);
 }
 
+@media (max-width: 900px) {
+  .learn-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-hero-thumb {
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .learn-hero {
     grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+
+  .learn-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .learn-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

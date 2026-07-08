@@ -4,7 +4,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: var(--font);
@@ -12,6 +12,7 @@ body {
   background: var(--white);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img { display: block; max-width: 100%; }
@@ -1740,6 +1741,16 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 540px) {
+  .container { padding: 0 16px; }
+
+  .toast-root {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .toast { max-width: none; }
+
   .courses-grid,
   .stats-grid,
   .testimonials-grid,

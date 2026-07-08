@@ -100,3 +100,30 @@ class Certificate(models.Model):
 
     def __str__(self):
         return f"{self.user.email} — {self.course.slug}"
+
+
+class SiteVisit(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="site_visits",
+    )
+    page_path = models.CharField(max_length=300)
+    page_title = models.CharField(max_length=200, blank=True)
+    session_key = models.CharField(max_length=64, blank=True)
+    user_agent = models.CharField(max_length=400, blank=True)
+    referrer = models.CharField(max_length=500, blank=True)
+    visited_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-visited_at"]
+        indexes = [
+            models.Index(fields=["-visited_at"]),
+            models.Index(fields=["page_path"]),
+        ]
+
+    def __str__(self):
+        who = self.user.email if self.user_id else self.session_key or "guest"
+        return f"{who} — {self.page_path}"

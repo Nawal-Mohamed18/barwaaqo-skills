@@ -922,3 +922,24 @@ class CertificateVerifyView(APIView):
         })
 
 
+class RecordVisitView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        from .models import SiteVisit
+
+        page_path = (request.data.get("pagePath") or "")[:300]
+        if not page_path:
+            return Response({"detail": "pagePath is required."}, status=400)
+
+        user = request.user if request.user.is_authenticated else None
+        SiteVisit.objects.create(
+            user=user,
+            page_path=page_path,
+            page_title=(request.data.get("pageTitle") or "")[:200],
+            session_key=(request.data.get("sessionKey") or "")[:64],
+            user_agent=(request.META.get("HTTP_USER_AGENT") or "")[:400],
+            referrer=(request.data.get("referrer") or "")[:500],
+        )
+        return Response({"ok": True}, status=201)
+

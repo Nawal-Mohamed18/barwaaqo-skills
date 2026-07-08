@@ -35,6 +35,10 @@
       title: "Certificates",
       subtitle: "Recently issued completion certificates.",
     },
+    system: {
+      title: "System activity",
+      subtitle: "All users, page visits, and who is watching which course.",
+    },
   };
 
   function currentSection() {
@@ -170,7 +174,7 @@
         <a href="lms.html#teachers" class="admin-quick-card"><i class="fa-solid fa-chalkboard-user"></i><span>Teachers</span></a>
         <a href="lms.html#manage-courses" class="admin-quick-card"><i class="fa-solid fa-pen-to-square"></i><span>Courses</span></a>
         <a href="lms.html#enrollments" class="admin-quick-card"><i class="fa-solid fa-user-graduate"></i><span>Enrollments</span></a>
-        <a href="lms.html#teachers" class="admin-quick-card"><i class="fa-solid fa-chalkboard-user"></i><span>Teachers</span></a>
+        <a href="lms.html#system" class="admin-quick-card"><i class="fa-solid fa-server"></i><span>System activity</span></a>
       </section>`;
   }
 
@@ -423,6 +427,129 @@
         }
       });
     });
+  }
+
+  function formatDuration(seconds) {
+    if (!seconds || seconds < 1) return "0:00";
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m}:${String(s).padStart(2, "0")}`;
+  }
+
+  function renderSystem(data) {
+    const stats = data.stats || {};
+    const users = data.users || [];
+    const visits = data.visits || [];
+    const watching = data.watching || [];
+    const current = data.currentlyWatching || [];
+
+    const userRows = users
+      .map(
+        (u) => `
+      <tr>
+        <td>
+          <strong>${u.name || "—"}</strong>
+          <span class="admin-course-meta">${u.email}</span>
+        </td>
+        <td><span class="lms-tag">${u.role}</span></td>
+        <td>${u.enrollments ?? 0}</td>
+        <td>${u.visits ?? 0}</td>
+        <td>${u.lastCourse ? `${u.lastCourse} · L${u.lastLesson || 1}` : "—"}</td>
+        <td>${u.lastVisit ? new Date(u.lastVisit).toLocaleString() : "—"}</td>
+      </tr>`
+      )
+      .join("");
+
+    const visitRows = visits
+      .map(
+        (v) => `
+      <tr>
+        <td>${v.name || "Guest"}${v.email ? `<span class="admin-course-meta">${v.email}</span>` : ""}</td>
+        <td>${v.pagePath}</td>
+        <td>${v.pageTitle || "—"}</td>
+        <td>${v.visitedAt ? new Date(v.visitedAt).toLocaleString() : "—"}</td>
+      </tr>`
+      )
+      .join("");
+
+    const currentRows = current
+      .map(
+        (w) => `
+      <tr>
+        <td>
+          <strong>${w.name || "—"}</strong>
+          <span class="admin-course-meta">${w.email}</span>
+        </td>
+        <td>${w.courseTitle}</td>
+        <td>L${w.lessonNumber}: ${w.lessonTitle}</td>
+        <td>${w.updatedAt ? new Date(w.updatedAt).toLocaleString() : "—"}</td>
+      </tr>`
+      )
+      .join("");
+
+    const watchRows = watching
+      .map(
+        (w) => `
+      <tr>
+        <td>
+          <strong>${w.name || "—"}</strong>
+          <span class="admin-course-meta">${w.email}</span>
+        </td>
+        <td>${w.courseTitle}</td>
+        <td>L${w.lessonNumber}: ${w.lessonTitle}</td>
+        <td>${formatDuration(w.watchSeconds)}</td>
+        <td>${w.updatedAt ? new Date(w.updatedAt).toLocaleString() : "—"}</td>
+      </tr>`
+      )
+      .join("");
+
+    return `
+      <section class="admin-kpi-grid admin-kpi-grid--compact">
+        ${statCard("Total users", stats.totalUsers || 0, "fa-users", "blue")}
+        ${statCard("Today's visits", stats.todayVisits || 0, "fa-eye", "yellow")}
+        ${statCard("Week visits", stats.weekVisits || 0, "fa-chart-line", "green")}
+        ${statCard("Active learners", stats.activeLearners || 0, "fa-play", "navy")}
+      </section>
+
+      ${tablePanel(
+        "system-users",
+        "All system users",
+        "fa-users",
+        "Every account on the platform with enrollments, visits, and last course activity.",
+        ["User", "Role", "Enrollments", "Visits", "Last course", "Last visit"],
+        userRows,
+        6
+      )}
+
+      ${tablePanel(
+        "system-visits",
+        "Recent page visits",
+        "fa-eye",
+        "Pages opened across the site — logged-in users and guests.",
+        ["Visitor", "Page", "Title", "When"],
+        visitRows,
+        4
+      )}
+
+      ${tablePanel(
+        "system-current",
+        "Currently watching",
+        "fa-circle-play",
+        "Learners with a saved resume position — likely active on a lesson now.",
+        ["Learner", "Course", "Lesson", "Last active"],
+        currentRows,
+        4
+      )}
+
+      ${tablePanel(
+        "system-watching",
+        "Watch history",
+        "fa-clapperboard",
+        "Lesson watch time recorded from the video player.",
+        ["Learner", "Course", "Lesson", "Watched", "Updated"],
+        watchRows,
+        5
+      )}`;
   }
 
   function renderCourses(data) {
@@ -952,6 +1079,15 @@
         animateAdminContent(content);
       } catch (e) {
         content.innerHTML = `<p class="admin-empty admin-empty--error">Could not load enrollments. ${e.message || ""}</p>`;
+      }
+    } else if (section === "system") {
+      content.innerHTML = `<p class="admin-loading">Loading system activity…</p>`;
+      try {
+        const systemData = await window.BSAPI.get("/learning/lms/system/");
+        content.innerHTML = renderSystem(systemData);
+        animateAdminContent(content);
+      } catch (e) {
+        content.innerHTML = `<p class="admin-empty admin-empty--error">Could not load system activity. ${e.message || ""}</p>`;
       }
     } else {
       content.innerHTML = renderSection(_adminData);

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Certificate, CourseQuiz, Enrollment, LearningState, LessonCompletion, QuizAttempt, QuizQuestion
+from .models import Certificate, CourseQuiz, Enrollment, LearningState, LessonCompletion, QuizAttempt, QuizQuestion, SiteVisit
 
 
 @admin.register(LessonCompletion)
@@ -42,3 +42,11 @@ class CertificateAdmin(admin.ModelAdmin):
     list_display = ("certificate_id", "user", "course", "issued_at")
     search_fields = ("certificate_id", "user__email", "course__slug")
     readonly_fields = ("certificate_id", "issued_at")
+
+
+@admin.register(SiteVisit)
+class SiteVisitAdmin(admin.ModelAdmin):
+    list_display = ("page_path", "user", "visited_at")
+    list_filter = ("visited_at",)
+    search_fields = ("page_path", "user__email", "session_key")
+    readonly_fields = ("visited_at",)

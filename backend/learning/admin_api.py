@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 
 from accounts.models import User
 from courses.models import Course
-from learning.models import Enrollment
+from learning.models import Enrollment, LearningState, LessonWatchProgress, SiteVisit
 from learning.services import clear_course_progress
 
 
@@ -196,3 +196,115 @@ class AdminTeacherListView(APIView):
         if temp_password:
             payload["temporaryPassword"] = temp_password
         return Response(payload, status=status.HTTP_201_CREATED)
+
+
+class AdminSystemActivityView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        if not _require_admin(request.user):
+            return Response({"detail": "Forbidden."}, status=403)
+
+        from django.db.models import Count, Max
+        from django.utils import timezone
+        from datetime import timedelta
+
+        today = timezone.now().date()
+        users_qs = User.objects.annotate(
+            enrollment_count=Count("enrollments"),
+            visit_count=Count("site_visits"),
+            last_visit=Max("site_visits__visited_at"),
+        ).order_by("-date_joined")[:200]
+
+        users = []
+        for user in users_qs:
+            learning = LearningState.objects.filter(user=user).select_related("last_course").first()
+            users.append({
+                "id": str(user.pk),
+                "email": user.email,
+                "name": user.display_name,
+                "role": user.lms_role,
+                "emailVerified": user.email_verified,
+                "dateJoined": user.date_joined.isoformat() if user.date_joined else None,
+                "enrollments": user.enrollment_count,
+                "visits": user.visit_count,
+                "lastVisit": user.last_visit.isoformat() if user.last_visit else None,
+                "lastCourse": learning.last_course.title if learning and learning.last_course else None,
+                "lastLesson": learning.last_lesson_number if learning else None,
+            })
+
+        visits = []
+        for visit in SiteVisit.objects.select_related("user").order_by("-visited_at")[:150]:
+            visits.append({
+                "id": visit.pk,
+                "email": visit.user.email if visit.user_id else None,
+                "name": visit.user.display_name if visit.user_id else "Guest",
+                "pagePath": visit.page_path,
+                "pageTitle": visit.page_title,
+                "sessionKey": visit.session_key,
+                "visitedAt": visit.visited_at.isoformat(),
+            })
+
+        watching = []
+        watch_qs = (
+            LessonWatchProgress.objects.select_related("user", "course")
+            .filter(watch_seconds__gt=0)
+            .order_by("-updated_at")[:150]
+        )
+        lesson_titles = {}
+        for row in watch_qs:
+            cache_key = (row.course_id, row.lesson_number)
+            if cache_key not in lesson_titles:
+                lesson = row.course.lessons.filter(lesson_number=row.lesson_number).first()
+                lesson_titles[cache_key] = lesson.title if lesson else f"Lesson {row.lesson_number}"
+            watching.append({
+                "email": row.user.email,
+                "name": row.user.display_name,
+                "courseId": row.course.slug,
+                "courseTitle": row.course.title,
+                "lessonNumber": row.lesson_number,
+                "lessonTitle": lesson_titles[cache_key],
+                "watchSeconds": row.watch_seconds,
+                "updatedAt": row.updated_at.isoformat(),
+            })
+
+        active_states = (
+            LearningState.objects.select_related("user", "last_course")
+            .filter(last_course__isnull=False)
+            .order_by("-updated_at")[:50]
+        )
+        currently_watching = []
+        for state in active_states:
+            if not state.last_course:
+                continue
+            lesson = state.last_course.lessons.filter(lesson_number=state.last_lesson_number).first()
+            currently_watching.append({
+                "email": state.user.email,
+                "name": state.user.display_name,
+                "courseId": state.last_course.slug,
+                "courseTitle": state.last_course.title,
+                "lessonNumber": state.last_lesson_number,
+                "lessonTitle": lesson.title if lesson else f"Lesson {state.last_lesson_number}",
+                "updatedAt": state.updated_at.isoformat(),
+            })
+
+        total_visits = SiteVisit.objects.count()
+        today_visits = SiteVisit.objects.filter(visited_at__date=today).count()
+        week_visits = SiteVisit.objects.filter(
+            visited_at__gte=timezone.now() - timedelta(days=7)
+        ).count()
+
+        return Response({
+            "stats": {
+                "totalUsers": User.objects.count(),
+                "verifiedUsers": User.objects.filter(email_verified=True).count(),
+                "totalVisits": total_visits,
+                "todayVisits": today_visits,
+                "weekVisits": week_visits,
+                "activeLearners": LearningState.objects.filter(last_course__isnull=False).count(),
+            },
+            "users": users,
+            "visits": visits,
+            "watching": watching,
+            "currentlyWatching": currently_watching,
+        })

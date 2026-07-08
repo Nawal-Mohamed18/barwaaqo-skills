@@ -14,6 +14,7 @@ window.BSAppShell = {
     teachers: { href: "lms.html#teachers", icon: "fa-chalkboard-user", label: "Teachers" },
     manageCourses: { href: "lms.html#manage-courses", icon: "fa-pen-to-square", label: "Manage courses" },
     enrollments: { href: "lms.html#enrollments", icon: "fa-user-graduate", label: "Enrollments" },
+    system: { href: "lms.html#system", icon: "fa-server", label: "System activity" },
     certificates: { href: "lms.html#certificates", icon: "fa-award", label: "Certificates" },
     courses: { href: "lms.html#courses", icon: "fa-chart-simple", label: "Analytics" },
     site: { href: "index.html", icon: "fa-globe", label: "View website" },

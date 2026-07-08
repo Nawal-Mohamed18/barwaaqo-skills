@@ -236,10 +236,12 @@
 
 .lms-table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .lms-table {
   width: 100%;
+  min-width: 560px;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
@@ -894,6 +896,36 @@
   .admin-topbar-date { display: none; }
   .admin-topbar-search { max-width: none; }
   .admin-health-metrics { grid-template-columns: 1fr; }
+  .admin-topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 12px;
+  }
+  .admin-topbar-search {
+    order: 3;
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .admin-topbar-meta {
+    margin-left: auto;
+  }
+  .admin-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .admin-hero h1 {
+    font-size: 1.45rem;
+  }
+  .admin-hero-badge {
+    align-self: flex-start;
+  }
+  .admin-quick-actions {
+    grid-template-columns: 1fr;
+  }
+  .admin-actions-cell {
+    white-space: normal;
+  }
 }
 
 [data-theme="dark"] .admin-topbar-search,

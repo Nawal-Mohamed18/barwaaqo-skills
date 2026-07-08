@@ -5,6 +5,7 @@ from django.urls import path
 from .admin_api import (
     AdminEnrollmentListView,
     AdminEnrollmentManageView,
+    AdminSystemActivityView,
     AdminTeacherListView,
     AdminUserListView,
     AdminUserManageView,
@@ -34,6 +35,8 @@ from .views import (
 
     UnenrollView,
 
+    RecordVisitView,
+
 )
 
 
@@ -48,6 +51,7 @@ urlpatterns = [
     path("lms/users/<int:user_id>/", AdminUserManageView.as_view(), name="lms-admin-user-manage"),
     path("lms/teachers/", AdminTeacherListView.as_view(), name="lms-admin-teachers"),
     path("lms/enrollments/", AdminEnrollmentListView.as_view(), name="lms-admin-enrollments"),
+    path("lms/system/", AdminSystemActivityView.as_view(), name="lms-admin-system"),
     path(
         "lms/enrollments/<int:user_id>/<slug:course_slug>/",
         AdminEnrollmentManageView.as_view(),
@@ -61,6 +65,8 @@ urlpatterns = [
     path("last/", SaveLastView.as_view(), name="learning-last"),
 
     path("watch/", SaveWatchView.as_view(), name="learning-watch"),
+
+    path("visits/", RecordVisitView.as_view(), name="learning-visits"),
 
     path("lesson-complete/", CompleteLessonView.as_view(), name="learning-lesson-complete"),
 
