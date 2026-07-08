@@ -28,7 +28,9 @@ jobs:
           mkdir _site
           cp *.html _site/ 2>/dev/null || true
           cp .nojekyll _site/
-          cp -r css js img assets _site/
+          for d in css js img assets; do
+            if [ -d "$d" ]; then cp -r "$d" _site/; fi
+          done
           if [ -f js/deploy-config.js ]; then cp js/deploy-config.js _site/js/; fi
 
       - uses: actions/configure-pages@v5
