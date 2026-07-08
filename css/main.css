@@ -534,13 +534,15 @@ a { text-decoration: none; color: inherit; }
 .lesson-icon {
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  flex: 0 0 44px;
   background: var(--yellow);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--navy);
-  flex-shrink: 0;
 }
 
 .lesson-label {
@@ -557,8 +559,9 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.35;
 }
 
-.lesson-card > div {
+.lesson-card > div:not(.lesson-icon) {
   min-width: 0;
+  flex: 1;
 }
 
 .lesson-meta {
@@ -1687,14 +1690,16 @@ a { text-decoration: none; color: inherit; }
     left: auto;
     right: auto;
     width: 100%;
-    max-width: none;
+    max-width: 360px;
+    margin-inline: auto;
   }
 
   .lesson-card {
-    align-items: flex-start;
+    align-items: center;
+    padding: 12px 14px;
   }
 
-  .lesson-card > div {
+  .lesson-card > div:not(.lesson-icon) {
     min-width: 0;
     flex: 1;
   }

@@ -21,27 +21,6 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-.hero-deploy-links {
-  margin-top: 14px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.hero-deploy-links a {
-  color: var(--yellow);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.hero-deploy-links a:hover {
-  text-decoration: underline;
-}
-
-.hero-deploy-links span {
-  margin: 0 8px;
-  opacity: 0.5;
-}
-
 /* Hero inline metrics */
 .hero-metrics {
   display: grid;
