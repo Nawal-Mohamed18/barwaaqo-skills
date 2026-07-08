@@ -2,13 +2,13 @@
 
 Online learning platform for Somalia and the diaspora — navy + yellow ed-tech design.
 
-## Live demo
+## Live links
 
-**Website:** https://nawal-mohamed18.github.io/barwaaqo-skills/
-
-**GitHub:** https://github.com/Nawal-Mohamed18/barwaaqo-skills
-
-**API health:** https://barwaaqo-skills-api.onrender.com/api/health/
+| | |
+|---|---|
+| 🌐 **Website** | https://nawal-mohamed18.github.io/barwaaqo-skills/ |
+| 📦 **GitHub** | https://github.com/Nawal-Mohamed18/barwaaqo-skills |
+| ⚙️ **API** | https://barwaaqo-skills-api.onrender.com/api/health/ |
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Nawal-Mohamed18/barwaaqo-skills)
 
