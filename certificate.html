@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Certificate — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lms.css">
+</head>
+<body class="cert-page-body">
+  <header class="header header--app">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="logo-text"><strong>Barwaaqo Skills</strong><small>Learn Anytime, Anywhere</small></span>
+      </a>
+      <a href="dashboard.html" class="btn btn-outline-white btn-sm" id="certDashLink" style="display:none;">Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container cert-page-main">
+    <div id="certLoading" class="cert-verify">
+      <p style="color:var(--text-muted);">Loading certificate…</p>
+    </div>
+    <div id="certInvalid" class="cert-verify hidden">
+      <i class="fa-solid fa-circle-xmark" style="font-size:2.5rem;color:#ef4444;margin-bottom:12px;"></i>
+      <h1>Certificate not found</h1>
+      <p style="color:var(--text-muted);">This verification link may be invalid or expired.</p>
+      <a href="index.html" class="btn btn-yellow" style="margin-top:20px;">Go home</a>
+    </div>
+    <article id="certValid" class="cert-display hidden">
+      <div class="cert-display-header">
+        <span class="cert-display-badge"><i class="fa-solid fa-award"></i> Certificate of Completion</span>
+        <h1 id="certCourseTitle">—</h1>
+        <p class="cert-display-sub">Barwaaqo Skills · Verified achievement</p>
+      </div>
+      <div class="cert-display-body">
+        <p class="cert-display-label">Awarded to</p>
+        <p class="cert-display-name" id="certStudentName">—</p>
+        <p class="cert-display-label">Issued on</p>
+        <p class="cert-display-date" id="certIssuedAt">—</p>
+        <p class="cert-display-id">ID: <code id="certId">—</code></p>
+      </div>
+      <div class="cert-display-actions">
+        <button type="button" class="btn btn-yellow" id="certPrintBtn"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+        <a href="profile.html" class="btn btn-outline-navy" id="certProfileLink" style="display:none;">Your profile</a>
+      </div>
+    </article>
+  </main>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/certificate.js"></script>
+</body>
+</html>

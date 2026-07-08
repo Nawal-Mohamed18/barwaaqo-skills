@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Log In — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+  <div class="auth-layout">
+    <aside class="auth-panel auth-panel--brand" aria-hidden="true">
+      <div class="auth-brand-inner">
+        <a href="index.html" class="auth-brand-logo">
+          <span class="auth-logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+          <strong>Barwaaqo Skills</strong>
+        </a>
+
+        <h2 class="auth-brand-title">Pick up right where you left off</h2>
+        <p class="auth-brand-desc">Your courses, progress, and XP are waiting for you.</p>
+
+        <ul class="auth-brand-benefits">
+          <li><i class="fa-solid fa-circle-check"></i> Resume lessons from any device</li>
+          <li><i class="fa-solid fa-circle-check"></i> Track progress across all courses</li>
+          <li><i class="fa-solid fa-circle-check"></i> Build streaks and earn XP</li>
+        </ul>
+
+        <div class="auth-brand-stat">
+          <span class="auth-brand-stat-num">12+</span>
+          <span class="auth-brand-stat-label">Career-focused courses</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="auth-panel auth-panel--form">
+      <a href="#" class="auth-back" data-auth-back data-fallback="index.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+      <div class="auth-form-wrap">
+        <header class="auth-header">
+          <p class="auth-eyebrow">Account access</p>
+          <h1>Welcome back</h1>
+          <p>Log in to continue your courses and open your dashboard.</p>
+        </header>
+
+        <div class="auth-error" id="authError"></div>
+
+        <form class="auth-form" id="loginForm">
+          <div class="auth-field">
+            <label for="email">Email address</label>
+            <div class="auth-input-wrap">
+              <i class="fa-regular fa-envelope auth-input-icon" aria-hidden="true"></i>
+              <input type="email" id="email" name="email" required placeholder="you@email.com" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label for="password">Password</label>
+            <div class="auth-input-wrap">
+              <i class="fa-solid fa-lock auth-input-icon" aria-hidden="true"></i>
+              <input type="password" id="password" name="password" required placeholder="Your password" autocomplete="current-password">
+              <button type="button" class="auth-input-toggle" data-toggle-password="password" aria-label="Show password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-yellow btn-lg auth-submit">Log In</button>
+        </form>
+
+        <footer class="auth-switch">
+          <span>New here?</span>
+          <a href="signup.html" id="signupLink">Create an account</a>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="guest"></script>
+  <script src="js/lib/auth-back.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const redirect = params.get("redirect") || (window.BSNav?.postLoginUrl?.() || "dashboard.html");
+    document.getElementById("signupLink").href = `signup.html?redirect=${encodeURIComponent(redirect)}`;
+
+    document.querySelectorAll("[data-toggle-password]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const input = document.getElementById(btn.dataset.togglePassword);
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        btn.setAttribute("aria-label", show ? "Hide password" : "Show password");
+        btn.querySelector("i").className = show ? "fa-regular fa-eye-slash" : "fa-regular fa-eye";
+      });
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const err = document.getElementById("authError");
+      err.classList.remove("show");
+      try {
+        await BSAuth.signIn(
+          document.getElementById("email").value,
+          document.getElementById("password").value
+        );
+        const dest = BSAuth.isAdmin()
+          ? "lms.html"
+          : params.get("redirect") || (window.BSNav?.postLoginUrl?.() || "dashboard.html");
+        location.href = dest;
+      } catch (error) {
+        if (error.code === "unverified") {
+          location.href = `verify-email.html?email=${encodeURIComponent(error.email)}`;
+          return;
+        }
+        err.textContent = error.message;
+        err.classList.add("show");
+      }
+    });
+  </script>
+</body>
+</html>

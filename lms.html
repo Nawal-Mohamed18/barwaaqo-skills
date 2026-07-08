@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Admin — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/lms.css">
+  <link rel="stylesheet" href="css/admin-motion.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="dashboard-body admin-page admin-animated" data-page="admin">
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar"></aside>
+
+  <main class="dash-main admin-main">
+    <header class="admin-topbar">
+      <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="admin-topbar-search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="Search learners, courses…" aria-label="Search admin panel" id="lmsSearch">
+      </div>
+      <div class="admin-topbar-meta">
+        <span class="admin-topbar-date" id="adminDate"></span>
+        <div id="dashUserSlot"></div>
+      </div>
+    </header>
+
+    <section class="admin-hero" id="adminHero">
+      <div>
+        <p class="admin-hero-label">Administration</p>
+        <h1 id="lmsTitle">Admin dashboard</h1>
+        <p id="lmsSubtitle">Manage users, courses, enrollments, and platform health.</p>
+      </div>
+      <span class="admin-hero-badge" id="lmsRolePill"><i class="fa-solid fa-shield-halved"></i> Administrator</span>
+    </section>
+
+    <div id="lmsContent" class="admin-content">
+      <p class="admin-loading">Loading admin data…</p>
+    </div>
+  </main>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/app-shell.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="admin"></script>
+  <script src="js/dash-shell.js"></script>
+  <script src="js/lms-hub.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>My Courses — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="dashboard-body dash-animated" data-page="my-courses">
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar"></aside>
+
+  <main class="dash-main">
+    <header class="dash-topbar bs-fade-in">
+      <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dash-topbar-title-wrap">
+        <p class="dash-panel-label">Learning</p>
+        <h2 class="dash-topbar-heading">My courses</h2>
+      </div>
+    </header>
+
+    <section class="dash-section bs-fade-in-up">
+      <div class="dash-section-head">
+        <h2>My Courses <small id="mySlotsInfo" style="font-weight:500;color:var(--text-muted);font-size:0.85rem;"></small></h2>
+        <a href="courses.html">Browse courses</a>
+      </div>
+
+      <div id="myCoursesEmpty" class="hidden" style="text-align:center;padding:48px 20px;background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);">
+        <i class="fa-solid fa-book-open" style="font-size:2.5rem;color:var(--border);margin-bottom:16px;"></i>
+        <h3 style="margin-bottom:8px;">No courses yet</h3>
+        <p style="color:var(--text-muted);margin-bottom:20px;">Use <strong>Courses</strong> in the sidebar to enroll on your path.</p>
+        <a href="profile.html" class="btn btn-yellow">Profile settings</a>
+      </div>
+
+      <div class="my-courses-list" id="myCoursesGrid"></div>
+    </section>
+  </main>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/app-shell.js"></script>
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/toast.js"></script>
+  <script src="js/lib/render-courses.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="verified"></script>
+  <script src="js/lib/admin-redirect.js"></script>
+  <script src="js/dash-shell.js"></script>
+  <script src="js/my-courses.js"></script>
+</body>
+</html>

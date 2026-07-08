@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Verify Email — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <a href="#" class="auth-back" data-auth-back data-fallback="login.html" style="display:inline-flex;margin-bottom:20px;"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+    <div class="auth-brand-logo" style="margin-bottom:16px;">
+      <span class="auth-logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+      <strong>Barwaaqo Skills</strong>
+    </div>
+
+    <h1 id="verifyTitle">Verify your email</h1>
+    <p id="verifyMessage">We're confirming your account…</p>
+
+    <div class="auth-error" id="authError"></div>
+
+    <div id="verifyPending" class="hidden">
+      <p id="verifyPendingText" style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;margin-bottom:20px;"></p>
+      <a href="#" id="verifyLink" class="btn btn-yellow hidden" style="width:100%;margin-bottom:12px;">Verify my email</a>
+      <button type="button" class="btn btn-outline-navy" style="width:100%;" id="resendBtn">Resend verification link</button>
+    </div>
+
+    <div id="verifySuccess" class="hidden">
+      <a href="login.html" id="loginAfterVerify" class="btn btn-yellow btn-lg" style="width:100%;">Log in</a>
+    </div>
+  </div>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/auth-back.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const email = params.get("email");
+    const token = params.get("token");
+    const pending = params.get("pending");
+    const redirect = sessionStorage.getItem("barwaaqo_signup_redirect") || params.get("redirect") || "dashboard.html";
+
+    const err = document.getElementById("authError");
+    const pendingEl = document.getElementById("verifyPending");
+    const successEl = document.getElementById("verifySuccess");
+    const msg = document.getElementById("verifyMessage");
+    const title = document.getElementById("verifyTitle");
+    const pendingText = document.getElementById("verifyPendingText");
+    const verifyLink = document.getElementById("verifyLink");
+    const resendBtn = document.getElementById("resendBtn");
+
+    document.getElementById("loginAfterVerify").href =
+      `login.html?redirect=${encodeURIComponent(redirect)}`;
+
+    function showError(message) {
+      err.textContent = message;
+      err.classList.add("show");
+    }
+
+    function clearError() {
+      err.textContent = "";
+      err.classList.remove("show");
+    }
+
+    function applyStoredVerifyLink() {
+      const stored = sessionStorage.getItem("barwaaqo_pending_verify");
+      if (!stored) return false;
+      try {
+        const data = JSON.parse(stored);
+        if (data.verifyUrl && (!email || data.email === email)) {
+          verifyLink.href = data.verifyUrl;
+          verifyLink.classList.remove("hidden");
+          return true;
+        }
+      } catch {}
+      return false;
+    }
+
+    function showPending(userEmail) {
+      pendingText.textContent = `We sent a verification link to ${userEmail}. Open it from your inbox to activate your account.`;
+      pendingEl.classList.remove("hidden");
+      applyStoredVerifyLink();
+    }
+
+    resendBtn.addEventListener("click", async () => {
+      if (!email) return;
+      clearError();
+      resendBtn.disabled = true;
+      resendBtn.textContent = "Sending…";
+      try {
+        await BSAuth.onReady(() => {});
+        const url = await BSAuth.resendVerification(email);
+        sessionStorage.setItem(
+          "barwaaqo_pending_verify",
+          JSON.stringify({ email, verifyUrl: url })
+        );
+        verifyLink.href = url;
+        verifyLink.classList.remove("hidden");
+        msg.textContent = "A new verification link has been sent.";
+        clearError();
+      } catch (error) {
+        showError(error.message);
+      } finally {
+        resendBtn.disabled = false;
+        resendBtn.textContent = "Resend verification link";
+      }
+    });
+
+    async function run() {
+      await BSAuth.onReady(() => {});
+
+      if (email && token) {
+        msg.textContent = "Verifying your email…";
+        try {
+          await BSAuth.verifyEmail(email, token);
+          sessionStorage.removeItem("barwaaqo_pending_verify");
+          title.textContent = "Email verified";
+          msg.textContent = "Your account is active. You can log in now.";
+          pendingEl.classList.add("hidden");
+          successEl.classList.remove("hidden");
+        } catch (error) {
+          showError(error.message);
+          showPending(email);
+        }
+        return;
+      }
+
+      if (pending && email) {
+        title.textContent = "Verify your email";
+        msg.textContent = "One last step before you can start learning.";
+        showPending(email);
+        return;
+      }
+
+      if (email) {
+        msg.textContent = "This verification link is invalid or has expired.";
+        showPending(email);
+        return;
+      }
+
+      msg.textContent = "This verification link is invalid or has expired.";
+    }
+
+    run();
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Barwaaqo Skills — Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/design.css">
+</head>
+<body class="design-page">
+
+  <header class="design-hero">
+    <div class="container">
+      <p class="section-tag" style="color: var(--yellow); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Design Specification</p>
+      <h1>Barwaaqo Skills Design System</h1>
+      <p>Navy + yellow ed-tech identity for Somalia and the diaspora. All pages must use tokens from <code>css/tokens.css</code> — no one-off colors or spacing.</p>
+      <div class="meta">
+        <span class="design-tag">Font: Inter</span>
+        <span class="design-tag">Max width: 1200px</span>
+        <span class="design-tag">Style: Learnify-inspired</span>
+        <span class="design-tag">Breakpoints: 1024 / 768 / 540px</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="design-body">
+    <div class="container">
+
+      <section class="design-section">
+        <h2>Color palette</h2>
+        <p>Primary surfaces use navy; yellow drives action. Light sections use <code>#F8FAFC</code>.</p>
+        <div class="design-grid design-grid--colors">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #0B1D33;"></div>
+            <div class="swatch-info"><strong>Navy</strong><code>--navy #0B1D33</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #122A47;"></div>
+            <div class="swatch-info"><strong>Navy Mid</strong><code>--navy-mid</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFD233;"></div>
+            <div class="swatch-info"><strong>Yellow</strong><code>--yellow #FFD233</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #0F172A;"></div>
+            <div class="swatch-info"><strong>Text Dark</strong><code>--text-dark</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #64748B;"></div>
+            <div class="swatch-info"><strong>Text Muted</strong><code>--text-muted</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #2563EB;"></div>
+            <div class="swatch-info"><strong>Price Blue</strong><code>--blue-price</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #F97316;"></div>
+            <div class="swatch-info"><strong>Orange</strong><code>--orange</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #F8FAFC; border-bottom: 1px solid #E2E8F0;"></div>
+            <div class="swatch-info"><strong>Surface Alt</strong><code>--surface-alt</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="design-section">
+        <h2>Typography</h2>
+        <p>Inter at 400 for body, 600–700 for UI labels and headings, 800 for hero display.</p>
+        <div class="type-sample">
+          <p class="display">Learn Anytime, Anywhere</p>
+          <p class="h2">Section heading (700)</p>
+          <p class="body">Body copy uses --text-muted on light backgrounds for descriptions, course blurbs, and FAQ answers. Line height stays at 1.5–1.7 for readability.</p>
+          <p class="small">Caption / meta — 0.8rem, muted</p>
+        </div>
+      </section>
+
+      <section class="design-section">
+        <h2>Buttons</h2>
+        <p>Pill shape, 2px border, semibold 0.9rem. Yellow is the primary action on dark; navy on light.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-yellow">Primary — Yellow</button>
+          <button type="button" class="btn btn-navy">Secondary — Navy</button>
+          <button type="button" class="btn btn-ghost" style="background: var(--navy); padding: 12px 24px;">Ghost on Navy</button>
+          <button type="button" class="btn btn-outline-white" style="background: var(--navy);">Outline White</button>
+          <button type="button" class="btn btn-yellow btn-lg">Large CTA</button>
+        </div>
+      </section>
+
+      <section class="design-section">
+        <h2>Badges &amp; cards</h2>
+        <p>Course cards: white, 16px radius, soft shadow. Badges sit top-left on thumbnails.</p>
+        <div class="component-row">
+          <span class="badge badge-yellow">Bestseller</span>
+          <span class="badge badge-orange">Popular</span>
+          <span class="badge badge-blue">New</span>
+          <div class="mini-card">
+            <div class="mini-card-thumb"></div>
+            <div class="mini-card-body">
+              <h4>Course card pattern</h4>
+              <p>Thumb · title · instructor · price row</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="design-section">
+        <h2>CTA block</h2>
+        <p>Navy container with dot-grid texture, yellow icon circle, optional newsletter form.</p>
+        <div class="cta-box">
+          <div class="cta-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="cta-text">
+            <h2>Newsletter / call-to-action pattern</h2>
+            <p>White headline, light gray subcopy. Form inputs are pill-shaped on navy.</p>
+          </div>
+          <button type="button" class="btn btn-yellow">Subscribe</button>
+        </div>
+      </section>
+
+      <section class="design-section">
+        <h2>Layout tokens</h2>
+        <p>Shared spacing, radii, and shadows — reference when building new sections.</p>
+        <table class="token-table">
+          <thead>
+            <tr><th>Token</th><th>Value</th><th>Use</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>--max</code></td><td>1200px</td><td>Container max-width</td></tr>
+            <tr><td><code>--header-h</code></td><td>80px</td><td>Sticky header height</td></tr>
+            <tr><td><code>--gutter</code></td><td>24px</td><td>Horizontal page padding</td></tr>
+            <tr><td><code>--radius-lg</code></td><td>16px</td><td>Cards, panels</td></tr>
+            <tr><td><code>--radius-pill</code></td><td>999px</td><td>Buttons, inputs, tags</td></tr>
+            <tr><td><code>--shadow</code></td><td>4px 24px navy 8%</td><td>Default elevation</td></tr>
+            <tr><td><code>--space-section</code></td><td>80px</td><td>Major section padding</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="design-section">
+        <h2>Page sections (landing)</h2>
+        <p>Standard homepage order — keep this sequence when extending the site.</p>
+        <table class="token-table">
+          <thead>
+            <tr><th>#</th><th>Section</th><th>Background</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Header (sticky nav)</td><td>Navy</td></tr>
+            <tr><td>2</td><td>Hero</td><td>Navy gradient</td></tr>
+            <tr><td>3</td><td>Features bar</td><td>White</td></tr>
+            <tr><td>4</td><td>Stats</td><td>Navy</td></tr>
+            <tr><td>5</td><td>Featured courses</td><td>Surface alt</td></tr>
+            <tr><td>6</td><td>Why choose us</td><td>White</td></tr>
+            <tr><td>7</td><td>Learning preview / demo</td><td>Surface alt</td></tr>
+            <tr><td>8</td><td>Testimonials</td><td>White</td></tr>
+            <tr><td>9</td><td>Pricing</td><td>Surface alt</td></tr>
+            <tr><td>10</td><td>FAQ</td><td>White</td></tr>
+            <tr><td>11</td><td>Newsletter CTA</td><td>Surface alt</td></tr>
+            <tr><td>12</td><td>Footer</td><td>Navy</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="design-footer">
+    <p><a href="index.html">← Home</a> · <a href="courses.html">Courses</a> · <a href="dashboard.html">Dashboard</a> · <a href="my-courses.html">My Courses</a></p>
+  </footer>
+
+</body>
+</html>

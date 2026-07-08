@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Django API (8765)",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "args": ["manage.py", "runserver", "8765"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "django",
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Watching for file changes",
+          "endsPattern": "Starting development server|Quit the server"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "barwaaqo"
+      }
+    },
+    {
+      "label": "Frontend: Static site (8080)",
+      "type": "shell",
+      "command": "py",
+      "args": ["-m", "http.server", "8080"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "http",
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Serving HTTP",
+          "endsPattern": "."
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "barwaaqo"
+      }
+    },
+    {
+      "label": "Run Barwaaqo Skills (API + Frontend)",
+      "dependsOn": [
+        "Backend: Django API (8765)",
+        "Frontend: Static site (8080)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Migrate database",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "args": ["manage.py", "migrate"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Seed courses",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "args": ["manage.py", "seed_courses"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

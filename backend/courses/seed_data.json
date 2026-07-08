@@ -1,0 +1,1720 @@
+[
+  {
+    "id": "ui-ux-fundamentals",
+    "title": "UI/UX Design Fundamentals",
+    "description": "Master user interface and user experience design \u2014 wireframes, Figma mockups, visual design, and prototyping.",
+    "category": "Design",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=5",
+    "playlistId": "PL32lfzEo50SrtB6L8Q1nS47y0emxNRut",
+    "thumbnailVideoId": "c9Wg6Cb_YlU",
+    "rating": 4.8,
+    "reviewCount": 1200,
+    "badge": "Bestseller",
+    "badgeClass": "badge-yellow",
+    "featured": true,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "UI/UX Design \u2014 Wireframe to Figma",
+        "videoId": "c9Wg6Cb_YlU",
+        "duration": "1:26:21"
+      },
+      {
+        "id": 2,
+        "title": "What is Graphic Design?",
+        "videoId": "sByzHoiYFX0",
+        "duration": "6:30"
+      },
+      {
+        "id": 3,
+        "title": "CSS for UI Implementation",
+        "videoId": "1Rs2ND1ryYc",
+        "duration": "4:32:00"
+      },
+      {
+        "id": 4,
+        "title": "Photoshop for Visual Design",
+        "videoId": "IyR_uYsRdPs",
+        "duration": "33:00"
+      },
+      {
+        "id": 5,
+        "title": "HTML Structure for Interfaces",
+        "videoId": "ScMzIvxBSi4",
+        "duration": "11:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 UX Foundations",
+        "from": 1,
+        "to": 2,
+        "goal": "Understand UX roles and the design process"
+      },
+      {
+        "phase": "Phase 2 \u2014 Research",
+        "from": 3,
+        "to": 3,
+        "goal": "Plan and run user research"
+      },
+      {
+        "phase": "Phase 3 \u2014 Design",
+        "from": 4,
+        "to": 4,
+        "goal": "Wireframes and interactive prototypes"
+      },
+      {
+        "phase": "Phase 4 \u2014 Validation",
+        "from": 5,
+        "to": 5,
+        "goal": "Usability testing and iteration"
+      }
+    ]
+  },
+  {
+    "id": "web-development-bootcamp",
+    "title": "Web Development Bootcamp",
+    "description": "Build modern websites with HTML, CSS, and responsive design \u2014 from your first page to mobile-friendly layouts.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=8",
+    "playlistId": "PL77LFcZGHYRCU0QUI0JgXYext-1ctMvo0",
+    "thumbnailVideoId": "pQN-pnXPaVg",
+    "rating": 4.9,
+    "reviewCount": 2400,
+    "badge": "Hot",
+    "badgeClass": "badge-orange",
+    "featured": true,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Learn HTML \u2013 Full Tutorial",
+        "videoId": "pQN-pnXPaVg",
+        "duration": "1:32:47"
+      },
+      {
+        "id": 2,
+        "title": "HTML Forms & Input Elements",
+        "videoId": "UB1O30fR-EE",
+        "duration": "28:15"
+      },
+      {
+        "id": 3,
+        "title": "CSS Crash Course",
+        "videoId": "yfoY53QXEnI",
+        "duration": "1:25:00"
+      },
+      {
+        "id": 4,
+        "title": "CSS Flexbox",
+        "videoId": "JJSoEo8JSnc",
+        "duration": "18:42"
+      },
+      {
+        "id": 5,
+        "title": "Responsive Web Design",
+        "videoId": "srvUrASNj0s",
+        "duration": "35:20"
+      },
+      {
+        "id": 6,
+        "title": "CSS Zero to Hero",
+        "videoId": "1Rs2ND1ryYc",
+        "duration": "4:32:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 HTML",
+        "from": 1,
+        "to": 2,
+        "goal": "Structure pages and build forms"
+      },
+      {
+        "phase": "Phase 2 \u2014 CSS Core",
+        "from": 3,
+        "to": 3,
+        "goal": "Style layouts and typography"
+      },
+      {
+        "phase": "Phase 3 \u2014 Layout Systems",
+        "from": 4,
+        "to": 5,
+        "goal": "Flexbox and CSS Grid"
+      },
+      {
+        "phase": "Phase 4 \u2014 Responsive",
+        "from": 6,
+        "to": 6,
+        "goal": "Mobile-first responsive sites"
+      }
+    ]
+  },
+  {
+    "id": "digital-marketing-mastery",
+    "title": "Digital Marketing Mastery",
+    "description": "Learn SEO, content strategy, and communication skills to grow any business online.",
+    "category": "Business",
+    "instructor": "HubSpot Academy",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=9",
+    "playlistId": "PLkLb693fnlVw1O74n0G2RsgqHRQ9F_80",
+    "thumbnailVideoId": "kqtD5dpn9C8",
+    "rating": 4.7,
+    "reviewCount": 890,
+    "badge": "New",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "What is Digital Marketing?",
+        "videoId": "kqtD5dpn9C8",
+        "duration": "8:15"
+      },
+      {
+        "id": 2,
+        "title": "SEO Fundamentals",
+        "videoId": "xsVTqzratPs",
+        "duration": "12:30"
+      },
+      {
+        "id": 3,
+        "title": "Business Writing Essentials",
+        "videoId": "8S0FDjFBj8o",
+        "duration": "18:20"
+      },
+      {
+        "id": 4,
+        "title": "Public Speaking for Brands",
+        "videoId": "Unzc731iCUY",
+        "duration": "9:58"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Foundations",
+        "from": 1,
+        "to": 1,
+        "goal": "Digital marketing landscape"
+      },
+      {
+        "phase": "Phase 2 \u2014 SEO",
+        "from": 2,
+        "to": 2,
+        "goal": "Search engine optimization"
+      },
+      {
+        "phase": "Phase 3 \u2014 Content & Social",
+        "from": 3,
+        "to": 4,
+        "goal": "Content and social strategy"
+      },
+      {
+        "phase": "Phase 4 \u2014 Email",
+        "from": 5,
+        "to": 5,
+        "goal": "Email campaigns that convert"
+      }
+    ]
+  },
+  {
+    "id": "data-science-python",
+    "title": "Data Science with Python",
+    "description": "Analyze data with pandas and matplotlib \u2014 build real data science skills from scratch.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=12",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "r-uOLxNrNk8",
+    "rating": 4.9,
+    "reviewCount": 1800,
+    "badge": "Popular",
+    "badgeClass": "badge-blue",
+    "featured": true,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Data Analysis with Python \u2013 Intro",
+        "videoId": "r-uOLxNrNk8",
+        "duration": "10:05"
+      },
+      {
+        "id": 2,
+        "title": "Reading Data with Pandas",
+        "videoId": "ZyhVh-qRZPA",
+        "duration": "15:30"
+      },
+      {
+        "id": 3,
+        "title": "Data Visualization",
+        "videoId": "0P7QnIQDBJY",
+        "duration": "22:10"
+      },
+      {
+        "id": 4,
+        "title": "Machine Learning Overview",
+        "videoId": "i_LwzRVP7bg",
+        "duration": "3:52:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Setup",
+        "from": 1,
+        "to": 1,
+        "goal": "Python data analysis intro"
+      },
+      {
+        "phase": "Phase 2 \u2014 Pandas",
+        "from": 2,
+        "to": 3,
+        "goal": "Load, clean, and shape data"
+      },
+      {
+        "phase": "Phase 3 \u2014 Visualization",
+        "from": 4,
+        "to": 4,
+        "goal": "Charts and insights"
+      },
+      {
+        "phase": "Phase 4 \u2014 Projects",
+        "from": 5,
+        "to": 5,
+        "goal": "Real CSV workflows"
+      }
+    ]
+  },
+  {
+    "id": "javascript-full-course",
+    "title": "JavaScript Full Course",
+    "description": "Complete JavaScript tutorial for beginners \u2014 variables, functions, DOM, and modern ES6+ features.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=15",
+    "playlistId": "PL8p2bkYVfsN4N1ZXTEC9etH2zwq-dfcN7",
+    "thumbnailVideoId": "PkZNo7MFNFg",
+    "rating": 4.9,
+    "reviewCount": 3200,
+    "badge": "Bestseller",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "JavaScript Basics \u2013 Full Course",
+        "videoId": "PkZNo7MFNFg",
+        "duration": "3:26:43"
+      },
+      {
+        "id": 2,
+        "title": "JavaScript ES6 Features",
+        "videoId": "NCwa_xi0Uuc",
+        "duration": "1:12:00"
+      },
+      {
+        "id": 3,
+        "title": "Async JavaScript",
+        "videoId": "PoRJizFvM7s",
+        "duration": "45:20"
+      },
+      {
+        "id": 4,
+        "title": "100+ Web Dev Tips",
+        "videoId": "erEgovG9WBs",
+        "duration": "1:05:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Core JS",
+        "from": 1,
+        "to": 1,
+        "goal": "Variables, types, functions"
+      },
+      {
+        "phase": "Phase 2 \u2014 DOM",
+        "from": 2,
+        "to": 2,
+        "goal": "Manipulate the page"
+      },
+      {
+        "phase": "Phase 3 \u2014 ES6+",
+        "from": 3,
+        "to": 3,
+        "goal": "Modern JavaScript syntax"
+      },
+      {
+        "phase": "Phase 4 \u2014 Async",
+        "from": 4,
+        "to": 4,
+        "goal": "Promises and async/await"
+      }
+    ]
+  },
+  {
+    "id": "python-basics",
+    "title": "Python for Beginners",
+    "description": "Learn Python programming from zero \u2014 syntax, data types, loops, functions, and practical projects.",
+    "category": "Coding",
+    "instructor": "Programming with Mosh",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=11",
+    "playlistId": "PLrWUxd6__LlOznqgt5k0sHwDDbOm0g5H8",
+    "thumbnailVideoId": "_uQrJ0TkZlc",
+    "rating": 4.8,
+    "reviewCount": 2100,
+    "badge": "Hot",
+    "badgeClass": "badge-orange",
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Python for Beginners \u2013 Full Course",
+        "videoId": "_uQrJ0TkZlc",
+        "duration": "6:14:07"
+      },
+      {
+        "id": 2,
+        "title": "Variables & Data Types",
+        "videoId": "cQT33yu9pY8",
+        "duration": "12:40"
+      },
+      {
+        "id": 3,
+        "title": "Python Beginners Crash Course",
+        "videoId": "eWRfhZUzrAc",
+        "duration": "4:19:00"
+      },
+      {
+        "id": 4,
+        "title": "Learn Python \u2013 Full Course",
+        "videoId": "rfscVS0vtbw",
+        "duration": "4:26:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Getting Started",
+        "from": 1,
+        "to": 1,
+        "goal": "Python syntax and setup"
+      },
+      {
+        "phase": "Phase 2 \u2014 Data Types",
+        "from": 2,
+        "to": 2,
+        "goal": "Variables and types"
+      },
+      {
+        "phase": "Phase 3 \u2014 Control Flow",
+        "from": 3,
+        "to": 3,
+        "goal": "Loops and conditionals"
+      },
+      {
+        "phase": "Phase 4 \u2014 Functions",
+        "from": 4,
+        "to": 4,
+        "goal": "Reusable code blocks"
+      }
+    ]
+  },
+  {
+    "id": "react-crash-course",
+    "title": "React.js Crash Course",
+    "description": "Build interactive UIs with React \u2014 components, state, hooks, and a complete project walkthrough.",
+    "category": "Coding",
+    "instructor": "Traversy Media",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=20",
+    "playlistId": "PL4cUxe5kc5jqmHM_VLm3VXLWwtqroFxt2",
+    "thumbnailVideoId": "w7ejDZ8SWv8",
+    "rating": 4.8,
+    "reviewCount": 1500,
+    "badge": "Popular",
+    "badgeClass": "badge-blue",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "React JS Crash Course 2024",
+        "videoId": "w7ejDZ8SWv8",
+        "duration": "2:05:30"
+      },
+      {
+        "id": 2,
+        "title": "Full Stack Web Development",
+        "videoId": "nu_pCVPKzTk",
+        "duration": "6:49:00"
+      },
+      {
+        "id": 3,
+        "title": "Web Development Best Practices",
+        "videoId": "erEgovG9WBs",
+        "duration": "1:05:00"
+      },
+      {
+        "id": 4,
+        "title": "CSS Quick Refresher",
+        "videoId": "1PnVor36_40",
+        "duration": "20:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 React Basics",
+        "from": 1,
+        "to": 1,
+        "goal": "Components and JSX"
+      },
+      {
+        "phase": "Phase 2 \u2014 Props",
+        "from": 2,
+        "to": 2,
+        "goal": "Component composition"
+      },
+      {
+        "phase": "Phase 3 \u2014 State",
+        "from": 3,
+        "to": 3,
+        "goal": "Hooks and side effects"
+      },
+      {
+        "phase": "Phase 4 \u2014 Routing",
+        "from": 4,
+        "to": 4,
+        "goal": "Multi-page React apps"
+      }
+    ]
+  },
+  {
+    "id": "sql-beginners",
+    "title": "SQL for Beginners",
+    "description": "Query databases with SQL \u2014 SELECT, JOINs, aggregations, and real-world database skills.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=14",
+    "playlistId": "PL7827kDwv4eBYMU6nOEeq2",
+    "thumbnailVideoId": "HXV3zeQKqGY",
+    "rating": 4.7,
+    "reviewCount": 980,
+    "badge": "New",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "SQL Tutorial \u2013 Full Course",
+        "videoId": "HXV3zeQKqGY",
+        "duration": "4:20:00"
+      },
+      {
+        "id": 2,
+        "title": "Data Structures in C/C++",
+        "videoId": "B31LgI4Y4DQ",
+        "duration": "2:01:00"
+      },
+      {
+        "id": 3,
+        "title": "Intro to Programming",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      },
+      {
+        "id": 4,
+        "title": "Working with Data in Python",
+        "videoId": "ZyhVh-qRZPA",
+        "duration": "15:30"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 SQL Basics",
+        "from": 1,
+        "to": 1,
+        "goal": "Databases and SELECT"
+      },
+      {
+        "phase": "Phase 2 \u2014 Queries",
+        "from": 2,
+        "to": 2,
+        "goal": "Filtering and sorting"
+      },
+      {
+        "phase": "Phase 3 \u2014 JOINs",
+        "from": 3,
+        "to": 3,
+        "goal": "Relational data"
+      },
+      {
+        "phase": "Phase 4 \u2014 Aggregates",
+        "from": 4,
+        "to": 4,
+        "goal": "GROUP BY and analytics"
+      }
+    ]
+  },
+  {
+    "id": "graphic-design-basics",
+    "title": "Graphic Design Basics",
+    "description": "Learn color theory, typography, layout, and visual hierarchy to create professional designs.",
+    "category": "Design",
+    "instructor": "GCFGlobal",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=25",
+    "playlistId": "PL8p2bkYVfsN4N1ZXTEC9etH2zwq-dfcN7",
+    "thumbnailVideoId": "sByzHoiYFX0",
+    "rating": 4.6,
+    "reviewCount": 650,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "What is Graphic Design?",
+        "videoId": "sByzHoiYFX0",
+        "duration": "6:30"
+      },
+      {
+        "id": 2,
+        "title": "UI/UX Design in Figma",
+        "videoId": "c9Wg6Cb_YlU",
+        "duration": "1:26:21"
+      },
+      {
+        "id": 3,
+        "title": "Photoshop Essentials",
+        "videoId": "IyR_uYsRdPs",
+        "duration": "33:00"
+      },
+      {
+        "id": 4,
+        "title": "CSS for Layout & Typography",
+        "videoId": "1Rs2ND1ryYc",
+        "duration": "4:32:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Intro",
+        "from": 1,
+        "to": 1,
+        "goal": "What designers do"
+      },
+      {
+        "phase": "Phase 2 \u2014 Color",
+        "from": 2,
+        "to": 2,
+        "goal": "Color theory in practice"
+      },
+      {
+        "phase": "Phase 3 \u2014 Type",
+        "from": 3,
+        "to": 3,
+        "goal": "Typography rules"
+      },
+      {
+        "phase": "Phase 4 \u2014 Layout",
+        "from": 4,
+        "to": 4,
+        "goal": "Composition and hierarchy"
+      }
+    ]
+  },
+  {
+    "id": "public-speaking",
+    "title": "Public Speaking Confidence",
+    "description": "Overcome fear, structure compelling talks, and deliver presentations with confidence.",
+    "category": "Personal",
+    "instructor": "TED-Ed",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=9",
+    "playlistId": "PLJicmE8fK0E2JzHQDHCSLrEp4wbuzrmQ3",
+    "thumbnailVideoId": "Unzc731iCUY",
+    "rating": 4.7,
+    "reviewCount": 720,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "How to Speak So People Want to Listen",
+        "videoId": "Unzc731iCUY",
+        "duration": "9:58"
+      },
+      {
+        "id": 2,
+        "title": "Body Language & Presence",
+        "videoId": "Ks-_Mh1QhMc",
+        "duration": "21:02"
+      },
+      {
+        "id": 3,
+        "title": "Overcoming Stage Fright",
+        "videoId": "M3aw2ih626s",
+        "duration": "8:30"
+      },
+      {
+        "id": 4,
+        "title": "Business Writing Skills",
+        "videoId": "8S0FDjFBj8o",
+        "duration": "18:20"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Voice",
+        "from": 1,
+        "to": 1,
+        "goal": "Speak so people listen"
+      },
+      {
+        "phase": "Phase 2 \u2014 Structure",
+        "from": 2,
+        "to": 2,
+        "goal": "Craft compelling talks"
+      },
+      {
+        "phase": "Phase 3 \u2014 Presence",
+        "from": 3,
+        "to": 3,
+        "goal": "Body language on stage"
+      },
+      {
+        "phase": "Phase 4 \u2014 Confidence",
+        "from": 4,
+        "to": 4,
+        "goal": "Beat stage fright"
+      }
+    ]
+  },
+  {
+    "id": "excel-essentials",
+    "title": "Microsoft Excel Essentials",
+    "description": "Spreadsheets, formulas, charts, and pivot tables \u2014 everything you need for work and school.",
+    "category": "Business",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=30",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "UsdedFoTA68",
+    "rating": 4.6,
+    "reviewCount": 1100,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Pivot Tables & Data Analysis",
+        "videoId": "UsdedFoTA68",
+        "duration": "22:30"
+      },
+      {
+        "id": 2,
+        "title": "Data Analysis with Pandas",
+        "videoId": "ZyhVh-qRZPA",
+        "duration": "15:30"
+      },
+      {
+        "id": 3,
+        "title": "Data Visualization",
+        "videoId": "0P7QnIQDBJY",
+        "duration": "22:10"
+      },
+      {
+        "id": 4,
+        "title": "Intro to Programming Logic",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Basics",
+        "from": 1,
+        "to": 1,
+        "goal": "Spreadsheet fundamentals"
+      },
+      {
+        "phase": "Phase 2 \u2014 Formulas",
+        "from": 2,
+        "to": 2,
+        "goal": "Functions and calculations"
+      },
+      {
+        "phase": "Phase 3 \u2014 Charts",
+        "from": 3,
+        "to": 3,
+        "goal": "Visualize data"
+      },
+      {
+        "phase": "Phase 4 \u2014 Pivot Tables",
+        "from": 4,
+        "to": 4,
+        "goal": "Summarize large datasets"
+      }
+    ]
+  },
+  {
+    "id": "cybersecurity-101",
+    "title": "Cybersecurity 101",
+    "description": "Understand threats, network security, encryption, and how to protect yourself and organizations online.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=18",
+    "playlistId": "PL870822A085BF6F7E",
+    "thumbnailVideoId": "inWWhr5tnEA",
+    "rating": 4.8,
+    "reviewCount": 1400,
+    "badge": "Popular",
+    "badgeClass": "badge-blue",
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Cybersecurity Full Course",
+        "videoId": "inWWhr5tnEA",
+        "duration": "4:18:00"
+      },
+      {
+        "id": 2,
+        "title": "Network Security Basics",
+        "videoId": "qiQR5rTSshw",
+        "duration": "16:45"
+      },
+      {
+        "id": 3,
+        "title": "Git Security & Version Control",
+        "videoId": "RGOj5yH7evk",
+        "duration": "1:09:00"
+      },
+      {
+        "id": 4,
+        "title": "Computer Science Foundations",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Foundations",
+        "from": 1,
+        "to": 1,
+        "goal": "Security landscape"
+      },
+      {
+        "phase": "Phase 2 \u2014 Threats",
+        "from": 2,
+        "to": 2,
+        "goal": "Attack types and vectors"
+      },
+      {
+        "phase": "Phase 3 \u2014 Networks",
+        "from": 3,
+        "to": 3,
+        "goal": "Network security basics"
+      },
+      {
+        "phase": "Phase 4 \u2014 Identity",
+        "from": 4,
+        "to": 4,
+        "goal": "Passwords and authentication"
+      }
+    ]
+  },
+  {
+    "id": "nodejs-backend",
+    "title": "Node.js Backend Development",
+    "description": "Build server-side applications with Node.js \u2014 APIs, npm, and full-stack JavaScript workflows.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=16",
+    "playlistId": "PL4cUxe5kc5jqmHM_VLm3VXLWwtqroFxt2",
+    "thumbnailVideoId": "Oe421EPjeBE",
+    "rating": 4.8,
+    "reviewCount": 1650,
+    "badge": "Hot",
+    "badgeClass": "badge-orange",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Node.js Full Course",
+        "videoId": "Oe421EPjeBE",
+        "duration": "4:42:00"
+      },
+      {
+        "id": 2,
+        "title": "Node.js Tutorial",
+        "videoId": "TlB_eWDSMt4",
+        "duration": "1:00:00"
+      },
+      {
+        "id": 3,
+        "title": "Full Stack Web Development",
+        "videoId": "nu_pCVPKzTk",
+        "duration": "6:49:00"
+      },
+      {
+        "id": 4,
+        "title": "JavaScript Async Patterns",
+        "videoId": "PoRJizFvM7s",
+        "duration": "45:20"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Node.js Core",
+        "from": 1,
+        "to": 1,
+        "goal": "Runtime, npm, and modules"
+      },
+      {
+        "phase": "Phase 2 \u2014 APIs",
+        "from": 2,
+        "to": 2,
+        "goal": "Build and test REST endpoints"
+      },
+      {
+        "phase": "Phase 3 \u2014 Full Stack",
+        "from": 3,
+        "to": 3,
+        "goal": "Connect front-end and back-end"
+      },
+      {
+        "phase": "Phase 4 \u2014 Async",
+        "from": 4,
+        "to": 4,
+        "goal": "Non-blocking JavaScript patterns"
+      }
+    ]
+  },
+  {
+    "id": "git-github",
+    "title": "Git & GitHub for Developers",
+    "description": "Version control from scratch \u2014 commits, branches, pull requests, and team collaboration on GitHub.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=22",
+    "playlistId": "PL870822A085BF6F7E",
+    "thumbnailVideoId": "RGOj5yH7evk",
+    "rating": 4.9,
+    "reviewCount": 2800,
+    "badge": "Bestseller",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Git and GitHub Crash Course",
+        "videoId": "RGOj5yH7evk",
+        "duration": "1:09:00"
+      },
+      {
+        "id": 2,
+        "title": "Web Dev Workflow Tips",
+        "videoId": "erEgovG9WBs",
+        "duration": "1:05:00"
+      },
+      {
+        "id": 3,
+        "title": "Intro to Programming",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      },
+      {
+        "id": 4,
+        "title": "Cybersecurity Awareness",
+        "videoId": "inWWhr5tnEA",
+        "duration": "4:18:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Git Basics",
+        "from": 1,
+        "to": 1,
+        "goal": "Commits, branches, and merges"
+      },
+      {
+        "phase": "Phase 2 \u2014 Workflow",
+        "from": 2,
+        "to": 2,
+        "goal": "Professional dev practices"
+      },
+      {
+        "phase": "Phase 3 \u2014 Foundations",
+        "from": 3,
+        "to": 3,
+        "goal": "Programming fundamentals"
+      },
+      {
+        "phase": "Phase 4 \u2014 Security",
+        "from": 4,
+        "to": 4,
+        "goal": "Safe coding habits"
+      }
+    ]
+  },
+  {
+    "id": "docker-devops",
+    "title": "Docker & DevOps Basics",
+    "description": "Containerize applications with Docker \u2014 images, containers, and modern deployment fundamentals.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=19",
+    "playlistId": "PL870822A085BF6F7E",
+    "thumbnailVideoId": "fqMOX6JJhGo",
+    "rating": 4.7,
+    "reviewCount": 920,
+    "badge": "New",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Docker Full Course",
+        "videoId": "fqMOX6JJhGo",
+        "duration": "3:00:00"
+      },
+      {
+        "id": 2,
+        "title": "Node.js Deployment",
+        "videoId": "Oe421EPjeBE",
+        "duration": "4:42:00"
+      },
+      {
+        "id": 3,
+        "title": "Git for DevOps Teams",
+        "videoId": "RGOj5yH7evk",
+        "duration": "1:09:00"
+      },
+      {
+        "id": 4,
+        "title": "Network Security",
+        "videoId": "qiQR5rTSshw",
+        "duration": "16:45"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Containers",
+        "from": 1,
+        "to": 1,
+        "goal": "Docker images and containers"
+      },
+      {
+        "phase": "Phase 2 \u2014 Deploy",
+        "from": 2,
+        "to": 2,
+        "goal": "Ship Node.js apps"
+      },
+      {
+        "phase": "Phase 3 \u2014 GitOps",
+        "from": 3,
+        "to": 3,
+        "goal": "Version control in teams"
+      },
+      {
+        "phase": "Phase 4 \u2014 Security",
+        "from": 4,
+        "to": 4,
+        "goal": "Secure deployments"
+      }
+    ]
+  },
+  {
+    "id": "java-programming",
+    "title": "Java Programming",
+    "description": "Learn Java from the ground up \u2014 OOP, classes, collections, and building real applications.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=13",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "eIrMbAQSU34",
+    "rating": 4.8,
+    "reviewCount": 1750,
+    "badge": "Popular",
+    "badgeClass": "badge-blue",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Java Full Course",
+        "videoId": "eIrMbAQSU34",
+        "duration": "12:30:00"
+      },
+      {
+        "id": 2,
+        "title": "Intro to Programming",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      },
+      {
+        "id": 3,
+        "title": "Data Structures C/C++",
+        "videoId": "B31LgI4Y4DQ",
+        "duration": "2:01:00"
+      },
+      {
+        "id": 4,
+        "title": "Object-Oriented Concepts",
+        "videoId": "hEgO047GxaQ",
+        "duration": "6:00:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Java Core",
+        "from": 1,
+        "to": 1,
+        "goal": "Syntax and OOP basics"
+      },
+      {
+        "phase": "Phase 2 \u2014 CS Foundations",
+        "from": 2,
+        "to": 2,
+        "goal": "Programming concepts"
+      },
+      {
+        "phase": "Phase 3 \u2014 Data Structures",
+        "from": 3,
+        "to": 3,
+        "goal": "Efficient code organization"
+      },
+      {
+        "phase": "Phase 4 \u2014 OOP Deep Dive",
+        "from": 4,
+        "to": 4,
+        "goal": "Classes and objects"
+      }
+    ]
+  },
+  {
+    "id": "kotlin-mobile",
+    "title": "Kotlin for Android",
+    "description": "Build Android apps with Kotlin \u2014 modern syntax, UI components, and mobile development basics.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=21",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "F9UC9DY-vIU",
+    "rating": 4.7,
+    "reviewCount": 840,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Kotlin Full Course",
+        "videoId": "F9UC9DY-vIU",
+        "duration": "4:39:00"
+      },
+      {
+        "id": 2,
+        "title": "Flutter Mobile Development",
+        "videoId": "VPvVD8t02U8",
+        "duration": "37:00"
+      },
+      {
+        "id": 3,
+        "title": "Java Foundations",
+        "videoId": "eIrMbAQSU34",
+        "duration": "12:30:00"
+      },
+      {
+        "id": 4,
+        "title": "Programming Intro",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Kotlin",
+        "from": 1,
+        "to": 1,
+        "goal": "Modern Android language"
+      },
+      {
+        "phase": "Phase 2 \u2014 Mobile UI",
+        "from": 2,
+        "to": 2,
+        "goal": "Cross-platform with Flutter"
+      },
+      {
+        "phase": "Phase 3 \u2014 Java Bridge",
+        "from": 3,
+        "to": 3,
+        "goal": "JVM ecosystem"
+      },
+      {
+        "phase": "Phase 4 \u2014 Foundations",
+        "from": 4,
+        "to": 4,
+        "goal": "Core programming skills"
+      }
+    ]
+  },
+  {
+    "id": "flutter-mobile",
+    "title": "Flutter Mobile Apps",
+    "description": "Create cross-platform mobile apps with Flutter and Dart \u2014 widgets, layouts, and responsive UI.",
+    "category": "Coding",
+    "instructor": "Google Developers",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=24",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "VPvVD8t02U8",
+    "rating": 4.7,
+    "reviewCount": 760,
+    "badge": "New",
+    "badgeClass": "badge-yellow",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Flutter Course for Beginners",
+        "videoId": "VPvVD8t02U8",
+        "duration": "37:00"
+      },
+      {
+        "id": 2,
+        "title": "Kotlin for Android",
+        "videoId": "F9UC9DY-vIU",
+        "duration": "4:39:00"
+      },
+      {
+        "id": 3,
+        "title": "UI/UX for Mobile Apps",
+        "videoId": "c9Wg6Cb_YlU",
+        "duration": "1:26:21"
+      },
+      {
+        "id": 4,
+        "title": "React Native Concepts",
+        "videoId": "w7ejDZ8SWv8",
+        "duration": "2:05:30"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Flutter",
+        "from": 1,
+        "to": 1,
+        "goal": "Widgets and layouts"
+      },
+      {
+        "phase": "Phase 2 \u2014 Android",
+        "from": 2,
+        "to": 2,
+        "goal": "Kotlin companion skills"
+      },
+      {
+        "phase": "Phase 3 \u2014 UX",
+        "from": 3,
+        "to": 3,
+        "goal": "Mobile interface design"
+      },
+      {
+        "phase": "Phase 4 \u2014 React Patterns",
+        "from": 4,
+        "to": 4,
+        "goal": "Component-based UI"
+      }
+    ]
+  },
+  {
+    "id": "angular-framework",
+    "title": "Angular Framework",
+    "description": "Enterprise front-end development with Angular \u2014 components, services, routing, and TypeScript.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=17",
+    "playlistId": "PL4cUxe5kc5jqmHM_VLm3VXLWwtqroFxt2",
+    "thumbnailVideoId": "3dHNOWTI7H8",
+    "rating": 4.6,
+    "reviewCount": 690,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Angular Full Course",
+        "videoId": "3dHNOWTI7H8",
+        "duration": "9:00:00"
+      },
+      {
+        "id": 2,
+        "title": "JavaScript ES6+",
+        "videoId": "NCwa_xi0Uuc",
+        "duration": "1:12:00"
+      },
+      {
+        "id": 3,
+        "title": "TypeScript via Full Stack Course",
+        "videoId": "nu_pCVPKzTk",
+        "duration": "6:49:00"
+      },
+      {
+        "id": 4,
+        "title": "Web Dev Best Practices",
+        "videoId": "erEgovG9WBs",
+        "duration": "1:05:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Angular",
+        "from": 1,
+        "to": 1,
+        "goal": "Components and modules"
+      },
+      {
+        "phase": "Phase 2 \u2014 Modern JS",
+        "from": 2,
+        "to": 2,
+        "goal": "ES6+ syntax"
+      },
+      {
+        "phase": "Phase 3 \u2014 TypeScript",
+        "from": 3,
+        "to": 3,
+        "goal": "Typed front-end code"
+      },
+      {
+        "phase": "Phase 4 \u2014 Best Practices",
+        "from": 4,
+        "to": 4,
+        "goal": "Production-ready apps"
+      }
+    ]
+  },
+  {
+    "id": "machine-learning",
+    "title": "Machine Learning Basics",
+    "description": "Introduction to ML \u2014 supervised learning, models, data prep, and practical AI workflows.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=12",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "i_LwzRVP7bg",
+    "rating": 4.8,
+    "reviewCount": 1320,
+    "badge": "Popular",
+    "badgeClass": "badge-blue",
+    "featured": false,
+    "free": false,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Machine Learning for Everybody",
+        "videoId": "i_LwzRVP7bg",
+        "duration": "3:52:00"
+      },
+      {
+        "id": 2,
+        "title": "Data Analysis Intro",
+        "videoId": "r-uOLxNrNk8",
+        "duration": "10:05"
+      },
+      {
+        "id": 3,
+        "title": "Pandas for Data Prep",
+        "videoId": "ZyhVh-qRZPA",
+        "duration": "15:30"
+      },
+      {
+        "id": 4,
+        "title": "Data Visualization",
+        "videoId": "0P7QnIQDBJY",
+        "duration": "22:10"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 ML Intro",
+        "from": 1,
+        "to": 1,
+        "goal": "Models and training"
+      },
+      {
+        "phase": "Phase 2 \u2014 Data",
+        "from": 2,
+        "to": 2,
+        "goal": "Collect and explore datasets"
+      },
+      {
+        "phase": "Phase 3 \u2014 Pandas",
+        "from": 3,
+        "to": 3,
+        "goal": "Clean and shape data"
+      },
+      {
+        "phase": "Phase 4 \u2014 Viz",
+        "from": 4,
+        "to": 4,
+        "goal": "Communicate insights"
+      }
+    ]
+  },
+  {
+    "id": "programming-fundamentals",
+    "title": "Programming Fundamentals",
+    "description": "Start coding from zero \u2014 logic, algorithms, and core concepts every developer needs.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=10",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "zOjov-2OZ0E",
+    "rating": 4.9,
+    "reviewCount": 2200,
+    "badge": "Bestseller",
+    "badgeClass": "badge-yellow",
+    "featured": true,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Intro to Programming & CS",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      },
+      {
+        "id": 2,
+        "title": "Learn Python \u2013 Full Course",
+        "videoId": "rfscVS0vtbw",
+        "duration": "4:26:00"
+      },
+      {
+        "id": 3,
+        "title": "Python for Beginners",
+        "videoId": "hEgO047GxaQ",
+        "duration": "6:00:00"
+      },
+      {
+        "id": 4,
+        "title": "C++ Programming",
+        "videoId": "vLnPwxZdW4Y",
+        "duration": "4:00:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 CS Intro",
+        "from": 1,
+        "to": 1,
+        "goal": "How computers think"
+      },
+      {
+        "phase": "Phase 2 \u2014 Python",
+        "from": 2,
+        "to": 2,
+        "goal": "First programming language"
+      },
+      {
+        "phase": "Phase 3 \u2014 Practice",
+        "from": 3,
+        "to": 3,
+        "goal": "Build small programs"
+      },
+      {
+        "phase": "Phase 4 \u2014 C++",
+        "from": 4,
+        "to": 4,
+        "goal": "Lower-level concepts"
+      }
+    ]
+  },
+  {
+    "id": "cpp-programming",
+    "title": "C++ Programming",
+    "description": "Systems programming with C++ \u2014 memory, pointers, OOP, and performance-focused coding.",
+    "category": "Coding",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=14",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "vLnPwxZdW4Y",
+    "rating": 4.7,
+    "reviewCount": 980,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "C++ Full Course",
+        "videoId": "vLnPwxZdW4Y",
+        "duration": "4:00:00"
+      },
+      {
+        "id": 2,
+        "title": "Data Structures C/C++",
+        "videoId": "B31LgI4Y4DQ",
+        "duration": "2:01:00"
+      },
+      {
+        "id": 3,
+        "title": "Intro to Programming",
+        "videoId": "zOjov-2OZ0E",
+        "duration": "1:52:00"
+      },
+      {
+        "id": 4,
+        "title": "Calculus for Programmers",
+        "videoId": "9vKqVkMQHKk",
+        "duration": "17:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 C++",
+        "from": 1,
+        "to": 1,
+        "goal": "Syntax and memory"
+      },
+      {
+        "phase": "Phase 2 \u2014 Structures",
+        "from": 2,
+        "to": 2,
+        "goal": "Algorithms and data"
+      },
+      {
+        "phase": "Phase 3 \u2014 Foundations",
+        "from": 3,
+        "to": 3,
+        "goal": "Core CS concepts"
+      },
+      {
+        "phase": "Phase 4 \u2014 Math",
+        "from": 4,
+        "to": 4,
+        "goal": "Logic for developers"
+      }
+    ]
+  },
+  {
+    "id": "adobe-photoshop",
+    "title": "Adobe Photoshop Essentials",
+    "description": "Edit photos and create digital artwork \u2014 layers, tools, retouching, and design workflows.",
+    "category": "Design",
+    "instructor": "Envato Tuts+",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=25",
+    "playlistId": "PL8p2bkYVfsN4N1ZXTEC9etH2zwq-dfcN7",
+    "thumbnailVideoId": "IyR_uYsRdPs",
+    "rating": 4.6,
+    "reviewCount": 540,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Photoshop for Beginners",
+        "videoId": "IyR_uYsRdPs",
+        "duration": "33:00"
+      },
+      {
+        "id": 2,
+        "title": "Graphic Design Foundations",
+        "videoId": "sByzHoiYFX0",
+        "duration": "6:30"
+      },
+      {
+        "id": 3,
+        "title": "UI Design in Figma",
+        "videoId": "c9Wg6Cb_YlU",
+        "duration": "1:26:21"
+      },
+      {
+        "id": 4,
+        "title": "CSS for Web Design",
+        "videoId": "1PnVor36_40",
+        "duration": "20:00"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Photoshop",
+        "from": 1,
+        "to": 1,
+        "goal": "Tools and layers"
+      },
+      {
+        "phase": "Phase 2 \u2014 Design",
+        "from": 2,
+        "to": 2,
+        "goal": "Visual principles"
+      },
+      {
+        "phase": "Phase 3 \u2014 UI/UX",
+        "from": 3,
+        "to": 3,
+        "goal": "Digital product design"
+      },
+      {
+        "phase": "Phase 4 \u2014 Web",
+        "from": 4,
+        "to": 4,
+        "goal": "CSS implementation"
+      }
+    ]
+  },
+  {
+    "id": "business-communication",
+    "title": "Business Communication",
+    "description": "Write clearly, present confidently, and communicate professionally in any workplace.",
+    "category": "Business",
+    "instructor": "Coursera",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=9",
+    "playlistId": "PLJicmE8fK0E2JzHQDHCSLrEp4wbuzrmQ3",
+    "thumbnailVideoId": "8S0FDjFBj8o",
+    "rating": 4.7,
+    "reviewCount": 610,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Business Writing Essentials",
+        "videoId": "8S0FDjFBj8o",
+        "duration": "18:20"
+      },
+      {
+        "id": 2,
+        "title": "Public Speaking Skills",
+        "videoId": "Unzc731iCUY",
+        "duration": "9:58"
+      },
+      {
+        "id": 3,
+        "title": "Body Language on Stage",
+        "videoId": "Ks-_Mh1QhMc",
+        "duration": "21:02"
+      },
+      {
+        "id": 4,
+        "title": "Digital Marketing Basics",
+        "videoId": "kqtD5dpn9C8",
+        "duration": "8:15"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 Writing",
+        "from": 1,
+        "to": 1,
+        "goal": "Clear business emails"
+      },
+      {
+        "phase": "Phase 2 \u2014 Speaking",
+        "from": 2,
+        "to": 2,
+        "goal": "Confident presentations"
+      },
+      {
+        "phase": "Phase 3 \u2014 Presence",
+        "from": 3,
+        "to": 3,
+        "goal": "Body language"
+      },
+      {
+        "phase": "Phase 4 \u2014 Marketing",
+        "from": 4,
+        "to": 4,
+        "goal": "Audience messaging"
+      }
+    ]
+  },
+  {
+    "id": "hr-management",
+    "title": "HR Management Fundamentals",
+    "description": "Recruiting, onboarding, employee relations, and building strong teams in any organization.",
+    "category": "Personal",
+    "instructor": "freeCodeCamp",
+    "instructorAvatar": "https://i.pravatar.cc/40?img=30",
+    "playlistId": "PL530F7064821C58D9",
+    "thumbnailVideoId": "k2C5TjS2sh4",
+    "rating": 4.5,
+    "reviewCount": 480,
+    "badge": null,
+    "badgeClass": null,
+    "featured": false,
+    "free": true,
+    "lessons": [
+      {
+        "id": 1,
+        "title": "Human Resource Management",
+        "videoId": "k2C5TjS2sh4",
+        "duration": "1:30:00"
+      },
+      {
+        "id": 2,
+        "title": "Business Communication",
+        "videoId": "8S0FDjFBj8o",
+        "duration": "18:20"
+      },
+      {
+        "id": 3,
+        "title": "Presentation Skills",
+        "videoId": "Unzc731iCUY",
+        "duration": "9:58"
+      },
+      {
+        "id": 4,
+        "title": "Overcoming Stage Fright",
+        "videoId": "M3aw2ih626s",
+        "duration": "8:30"
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 1 \u2014 HR Core",
+        "from": 1,
+        "to": 1,
+        "goal": "People operations"
+      },
+      {
+        "phase": "Phase 2 \u2014 Communication",
+        "from": 2,
+        "to": 2,
+        "goal": "Workplace writing"
+      },
+      {
+        "phase": "Phase 3 \u2014 Presentations",
+        "from": 3,
+        "to": 3,
+        "goal": "Leadership talks"
+      },
+      {
+        "phase": "Phase 4 \u2014 Confidence",
+        "from": 4,
+        "to": 4,
+        "goal": "Manage difficult moments"
+      }
+    ]
+  }
+]

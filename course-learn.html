@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Course — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body" data-page="mycourses">
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar"></aside>
+
+  <main class="dash-main">
+    <header class="dash-topbar bs-fade-in">
+      <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dash-topbar-title-wrap">
+        <p class="dash-panel-label">Course</p>
+        <h2 class="dash-topbar-heading" id="learnTopbarTitle">Course overview</h2>
+      </div>
+    </header>
+
+    <div id="learnNotFound" class="hidden" style="text-align:center;padding:60px 20px;">
+      <h2>Course not found</h2>
+      <p style="color:var(--text-muted);margin:12px 0 24px;">This course may have been removed or the link is invalid.</p>
+      <a href="dashboard.html" class="btn btn-yellow">Back to dashboard</a>
+    </div>
+
+    <div id="learnContent">
+      <section class="learn-hero bs-fade-in-up">
+        <div class="learn-hero-thumb" id="learnThumb"></div>
+        <div class="learn-hero-body">
+          <span class="dash-tag dash-tag--navy" id="learnCategory">—</span>
+          <h1 id="learnTitle">—</h1>
+          <p id="learnInstructor" class="learn-meta">—</p>
+          <p id="learnDesc" class="learn-desc">—</p>
+          <div class="learn-progress-wrap">
+            <div class="learn-progress-label">
+              <span id="learnProgressText">0% complete</span>
+              <span id="learnLessonCount">0/0 lessons</span>
+            </div>
+            <div class="dash-progress" role="progressbar" id="learnProgressBar" aria-valuemin="0" aria-valuemax="100">
+              <div class="dash-progress-fill dash-progress-fill--accent" id="learnProgressFill" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="learn-hero-actions">
+            <div id="learnEnrollGate" class="hidden"></div>
+            <a href="#" class="btn btn-yellow btn-lg" id="learnResumeBtn"><i class="fa-solid fa-play"></i> Resume lesson</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="dash-section bs-fade-in-up">
+        <div class="dash-section-head">
+          <h2>Lessons</h2>
+          <span id="learnDuration" class="learn-meta">—</span>
+        </div>
+        <div class="learn-lesson-list" id="learnLessonList"></div>
+      </section>
+
+      <section class="dash-section bs-fade-in-up hidden" id="learnQuizSection">
+        <div class="dash-section-head">
+          <h2>Final assessment</h2>
+        </div>
+        <div class="profile-card">
+          <p id="learnQuizStatus">Complete all lessons to unlock the quiz.</p>
+          <a href="#" class="btn btn-navy" id="learnQuizBtn">Take quiz</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/app-shell.js"></script>
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/course-meta.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/toast.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="verified"></script>
+  <script src="js/dash-shell.js"></script>
+  <script src="js/course-learn.js"></script>
+</body>
+</html>

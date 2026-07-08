@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Course — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/lms.css">
+</head>
+<body class="player-page">
+
+  <div class="player-top">
+    <div class="container player-top-inner">
+      <a href="course-learn.html" class="player-back" id="playerBack"><i class="fa-solid fa-arrow-left"></i> Course dashboard</a>
+      <h1 id="courseTitle">Loading…</h1>
+      <div class="player-top-actions">
+        <span class="player-progress-pill" id="progressPill">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:16px;">
+    <div class="course-limit-modal" id="courseLimitModal"></div>
+    <p id="slotsInfo" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:16px;"></p>
+  </div>
+
+  <div class="container player-layout" id="playerLayout">
+    <div class="player-main">
+      <div class="player-video-wrap">
+        <div class="player-video">
+          <div id="youtubePlayer" class="youtube-player-wrap" title="Course video"></div>
+        </div>
+        <div class="player-info">
+          <h2 id="lessonTitle">—</h2>
+          <div class="player-meta">
+            <span><i class="fa-solid fa-tag"></i> <span id="courseCategory">—</span></span>
+            <span><i class="fa-solid fa-user"></i> <span id="courseInstructor">—</span></span>
+            <span><i class="fa-brands fa-youtube"></i> <span id="courseLessons">—</span></span>
+          </div>
+          <p class="player-desc" id="courseDesc"></p>
+          <div class="player-actions">
+            <button type="button" class="btn btn-yellow" id="nextLessonBtn"><i class="fa-solid fa-forward-step"></i> Next Lesson</button>
+            <button type="button" class="btn btn-navy hidden" id="enrollBtn">Enroll to start</button>
+          </div>
+          <div class="player-complete hidden" id="completePanel">
+            <h3><i class="fa-solid fa-trophy"></i> Course complete!</h3>
+            <p>Great work. Pass the final assessment to complete the course.</p>
+            <div class="player-complete-actions" id="completeRecommend"></div>
+          </div>
+          <div class="hidden" id="quizPanel"></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="player-sidebar">
+      <div class="player-sidebar-head">
+        <h3>Lessons</h3>
+        <p id="lessonProgressLabel">Progress saves automatically</p>
+      </div>
+      <div class="lesson-list" id="lessonList"></div>
+    </aside>
+  </div>
+
+  <div class="container player-not-found hidden" id="playerNotFound">
+    <h2>Course not found</h2>
+    <p style="color: var(--text-muted); margin: 12px 0 24px;">This course doesn't exist or the link is broken.</p>
+    <a href="dashboard.html" class="btn btn-yellow">Back to dashboard</a>
+  </div>
+
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/course-meta.js"></script>
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/payments.js"></script>
+  <script src="js/lib/lms.js"></script>
+  <script src="js/lib/toast.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="verified"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/course-detail.js"></script>
+</body>
+</html>

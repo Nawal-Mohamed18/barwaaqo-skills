@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Profile — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/lms.css">
+  <link rel="stylesheet" href="css/admin-motion.css">
+  <link rel="stylesheet" href="css/dash-motion.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="dashboard-body dash-animated profile-page" data-page="profile">
+
+  <div class="dash-overlay" id="dashOverlay"></div>
+  <aside class="dash-sidebar" id="dashSidebar"></aside>
+
+  <main class="dash-main" id="profileMain">
+    <header class="dash-topbar bs-fade-in" id="profileTopbarLearner">
+      <button class="dash-menu-btn" id="dashMenuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="dash-topbar-title-wrap">
+        <p class="dash-panel-label">Account</p>
+        <h2 class="dash-topbar-heading">Your profile</h2>
+      </div>
+    </header>
+
+    <header class="admin-topbar admin-topbar--profile hidden" id="profileTopbarAdmin">
+      <button class="dash-menu-btn" id="dashMenuBtnAdmin" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="admin-topbar-title">
+        <p class="admin-hero-label">Account</p>
+        <h2>Admin profile</h2>
+      </div>
+      <div class="admin-topbar-meta">
+        <a href="lms.html" class="admin-btn-primary admin-btn-primary--sm"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <div id="dashUserSlotAdmin"></div>
+      </div>
+    </header>
+
+    <section class="profile-hero-banner bs-fade-in-up" id="profileHeroLearner">
+      <div class="profile-hero-banner-glow" aria-hidden="true"></div>
+      <div class="profile-hero-banner-inner">
+        <div class="profile-hero-avatar-wrap">
+          <div class="profile-hero-avatar" id="accountAvatar" data-user-initials>?</div>
+          <label class="profile-hero-avatar-edit" for="avatarInput" title="Change photo">
+            <i class="fa-solid fa-camera"></i>
+            <input type="file" id="avatarInput" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+          </label>
+        </div>
+        <div class="profile-hero-body">
+          <h1 id="profileDisplayName">—</h1>
+          <p class="profile-hero-email" id="profileDisplayEmail">—</p>
+          <div class="profile-hero-badges">
+            <span class="profile-hero-badge profile-hero-badge--verified" id="verifyBadge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            <span class="profile-hero-badge" id="memberBadge"><i class="fa-regular fa-calendar"></i> <span id="memberSince">—</span></span>
+          </div>
+        </div>
+        <div class="profile-hero-actions">
+          <button type="button" class="btn btn-yellow btn-sm hidden" id="avatarRemoveBtn">Remove photo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-hero admin-hero--profile hidden" id="profileHeroAdmin">
+      <div>
+        <p class="admin-hero-label">Administrator account</p>
+        <h1 id="adminProfileName">—</h1>
+        <p id="adminProfileEmail">—</p>
+      </div>
+      <span class="admin-hero-badge"><i class="fa-solid fa-shield-halved"></i> Platform admin</span>
+    </section>
+
+    <div class="admin-account-grid hidden" id="profileAdminGrid">
+      <section class="admin-panel admin-panel--highlight">
+        <h2><i class="fa-solid fa-user-gear"></i> Account details</h2>
+        <form id="adminProfileForm" class="admin-form admin-form--inline">
+          <label class="admin-field">
+            <span>Display name</span>
+            <input type="text" id="adminProfileNameInput" maxlength="120" required>
+          </label>
+          <label class="admin-field">
+            <span>Email</span>
+            <input type="email" id="adminProfileEmailInput" disabled readonly>
+          </label>
+          <button type="submit" class="admin-btn-primary">Save changes</button>
+        </form>
+      </section>
+      <section class="admin-panel">
+        <h2><i class="fa-solid fa-bolt"></i> Quick access</h2>
+        <div class="admin-quick-actions admin-quick-actions--profile">
+          <a href="lms.html#students" class="admin-quick-card"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a>
+          <a href="lms.html#teachers" class="admin-quick-card"><i class="fa-solid fa-chalkboard-user"></i><span>Teachers</span></a>
+          <a href="lms.html#manage-courses" class="admin-quick-card"><i class="fa-solid fa-pen-to-square"></i><span>Courses</span></a>
+          <a href="index.html" class="admin-quick-card"><i class="fa-solid fa-globe"></i><span>Website</span></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="profile-stat-grid bs-stagger" id="profileStats" data-learner-only></div>
+
+    <div class="profile-layout profile-layout--stack" data-learner-only>
+      <section class="dash-profile-card dash-profile-card--soft bs-reveal">
+        <h3 class="dash-profile-section-title"><i class="fa-regular fa-user"></i> Personal information</h3>
+        <form id="profileForm" class="dash-profile-form">
+          <div class="dash-form-field">
+            <label for="profileName">Display name</label>
+            <input type="text" id="profileName" name="name" maxlength="120" required autocomplete="name">
+          </div>
+          <div class="dash-form-field">
+            <label for="profileEmail">Email address</label>
+            <input type="email" id="profileEmail" disabled readonly>
+            <p class="dash-form-hint">Email cannot be changed. Contact support if you need help.</p>
+          </div>
+          <button type="submit" class="btn btn-yellow" id="profileSaveBtn">Save name</button>
+        </form>
+      </section>
+
+      <section class="dash-profile-card dash-profile-card--soft profile-active-section bs-reveal" id="active-courses">
+        <div class="profile-section-head">
+          <h3 class="dash-profile-section-title"><i class="fa-solid fa-layer-group"></i> Active courses</h3>
+          <span class="profile-slots-pill" id="profileSlots">—</span>
+        </div>
+        <p class="dash-form-hint profile-section-desc">You can enroll in up to 3 courses at a time. Your progress is saved automatically.</p>
+        <div class="profile-courses-track" id="activeCoursesList"></div>
+        <a href="courses.html" class="btn btn-yellow btn-sm profile-browse-btn" id="profileBrowseBtn"><i class="fa-solid fa-compass"></i> Browse courses</a>
+      </section>
+
+      <section class="dash-profile-card dash-profile-card--soft bs-reveal" id="profileCertificatesSection">
+        <h3 class="dash-profile-section-title"><i class="fa-solid fa-award"></i> Certificates</h3>
+        <p class="dash-form-hint profile-section-desc">Earned when you complete all lessons and pass the final quiz.</p>
+        <div id="profileCertificatesList"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/app-shell.js"></script>
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/toast.js"></script>
+  <script src="js/lib/auth-guard.js" data-require="verified"></script>
+  <script src="js/dash-shell.js"></script>
+  <script src="js/dash-page.js"></script>
+  <script src="js/account-avatar.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

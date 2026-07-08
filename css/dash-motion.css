@@ -1,0 +1,159 @@
+/* Dashboard & profile page motion */
+
+@media (prefers-reduced-motion: no-preference) {
+  .dash-page-ready .profile-hero-banner {
+    animation: dashHeroIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .dash-page-ready .profile-hero-banner-glow {
+    animation: dashGlowPulse 4s ease-in-out infinite;
+  }
+
+  .dashboard-page-ready .dash-welcome--panel {
+    animation: dashHeroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+  }
+
+  .dashboard-page-ready .dash-welcome--panel::before {
+    animation: dashGlowPulse 5s ease-in-out infinite;
+  }
+
+  .dash-page-ready .dash-topbar {
+    animation: bsFadeIn 0.5s ease both;
+  }
+
+  .profile-page-ready .profile-stat-card {
+    animation: bsFadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--reveal-delay, 0s);
+  }
+
+  .profile-page-ready .profile-stat-card:hover,
+  .dashboard-page-ready .dash-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(11, 29, 51, 0.12);
+  }
+
+  .profile-page-ready .profile-course-card--tile {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.25s ease;
+  }
+
+  .profile-page-ready .profile-course-card--tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(11, 29, 51, 0.14);
+    border-color: rgba(255, 210, 51, 0.45);
+  }
+
+  .profile-page-ready .profile-course-card--tile.bs-revealed {
+    animation: dashTileIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--reveal-delay, 0s);
+  }
+
+  .dashboard-page-ready .dash-stat {
+    animation: bsFadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .dashboard-page-ready .dash-stats .dash-stat:nth-child(1) { animation-delay: 0.06s; }
+  .dashboard-page-ready .dash-stats .dash-stat:nth-child(2) { animation-delay: 0.12s; }
+  .dashboard-page-ready .dash-stats .dash-stat:nth-child(3) { animation-delay: 0.18s; }
+  .dashboard-page-ready .dash-stats .dash-stat:nth-child(4) { animation-delay: 0.24s; }
+
+  .dashboard-page-ready .dash-consistency.bs-revealed,
+  .dashboard-page-ready .dash-section.bs-revealed {
+    animation: bsFadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .dashboard-page-ready .dash-continue {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease;
+  }
+
+  .dashboard-page-ready .dash-continue:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(11, 29, 51, 0.12);
+  }
+
+  .dashboard-page-ready .dash-activity-cell:not(.dash-activity-cell--pad) {
+    opacity: 0;
+    transform: scale(0.6);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      background 0.2s ease;
+  }
+
+  .dashboard-page-ready .dash-activity-cell.cell-seen,
+  .dashboard-page-ready .dash-activity-cell.lvl-1,
+  .dashboard-page-ready .dash-activity-cell.lvl-2,
+  .dashboard-page-ready .dash-activity-cell.lvl-3,
+  .dashboard-page-ready .dash-activity-cell.lvl-4 {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .dashboard-page-ready .dash-activity-cell.cell-seen {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .dashboard-page-ready .dash-activity-week:nth-child(1) .dash-activity-cell { transition-delay: 0.02s; }
+  .dashboard-page-ready .dash-activity-week:nth-child(2) .dash-activity-cell { transition-delay: 0.04s; }
+  .dashboard-page-ready .dash-activity-week:nth-child(3) .dash-activity-cell { transition-delay: 0.06s; }
+  .dashboard-page-ready .dash-activity-week:nth-child(4) .dash-activity-cell { transition-delay: 0.08s; }
+  .dashboard-page-ready .dash-activity-week:nth-child(n+5) .dash-activity-cell { transition-delay: 0.1s; }
+
+  .profile-page-ready .dash-profile-card--soft.bs-revealed {
+    animation: bsFadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .profile-page-ready .dash-profile-card--soft {
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s ease,
+      border-color 0.25s ease;
+  }
+
+  .profile-page-ready .dash-profile-card--soft:hover {
+    box-shadow: 0 10px 28px rgba(11, 29, 51, 0.08);
+  }
+}
+
+@keyframes dashHeroIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashGlowPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes dashTileIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dashSpotlightIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}

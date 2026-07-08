@@ -1,0 +1,96 @@
+/* =============================================================================
+   BARWAAQO SKILLS — DESIGN SPECIFICATION
+   =============================================================================
+   Visual identity: Navy + Yellow (Learnify-inspired ed-tech)
+   Audience: Somalia & diaspora learners
+   Tone: Professional, trustworthy, energetic
+
+   USAGE
+   -----
+   Import this file before any other stylesheets. All UI must use these tokens
+   — do not hard-code colors, radii, or shadows elsewhere.
+
+   LAYOUT
+   ------
+   Max content width: 1200px (.container)
+   Page padding: 24px horizontal
+   Header height: 80px (sticky navy bar)
+   Section rhythm: 48–80px vertical padding
+
+   TYPOGRAPHY
+   ----------
+   Family: Inter (400 body, 600–700 UI, 800 hero headlines)
+   Body: 16px base, line-height 1.5
+   Headings: clamp() for responsive scale on hero/section titles
+   Muted copy: --text-muted (#64748B)
+
+   COLOR ROLES
+   -----------
+   --navy          Primary brand, header, footer, CTA backgrounds
+   --yellow        Accent, CTAs, highlights, icons on dark
+   --white         Cards, page background
+   --text-dark     Primary body text on light surfaces
+   --text-muted    Secondary text, descriptions
+   --text-light    Text on navy surfaces
+   --blue-price    Course pricing emphasis
+   --orange        "Popular" / urgency badges
+
+   COMPONENTS
+   ----------
+   Buttons: pill-shaped (--radius-pill), 4 variants (yellow, navy, ghost, outline)
+   Cards: white, --radius-lg, --shadow, 1px --border
+   Badges: uppercase, small, pill — yellow / orange / blue
+   CTA boxes: navy background + dot-grid overlay + yellow icon circle
+
+   BREAKPOINTS (in main.css)
+   -------------------------
+   1024px — 2-column grids, collapse demo sidebar
+   768px  — mobile nav, stacked hero & CTA
+   540px  — single-column grids
+   ============================================================================= */
+
+:root {
+  /* Brand */
+  --navy: #0B1D33;
+  --navy-mid: #122A47;
+  --navy-light: #1A3554;
+  --yellow: #FFD233;
+  --yellow-hover: #F0C420;
+
+  /* Neutrals & surfaces */
+  --white: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+  --text-light: #CBD5E1;
+  --border: #E2E8F0;
+
+  /* Semantic accents */
+  --blue-price: #2563EB;
+  --orange: #F97316;
+
+  /* Typography */
+  --font: 'Inter', system-ui, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Shape */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow: 0 4px 24px rgba(11, 29, 51, 0.08);
+  --shadow-lg: 0 12px 40px rgba(11, 29, 51, 0.12);
+
+  /* Layout */
+  --max: 1200px;
+  --header-h: 80px;
+  --space-section: 80px;
+  --space-section-sm: 48px;
+  --gutter: 24px;
+}

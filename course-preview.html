@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>Course Preview — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="logo-text"><strong>Barwaaqo Skills</strong><small>Learn Anytime, Anywhere</small></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="courses.html" data-nav-courses class="active">Courses</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#how-it-works">How It Works</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost" data-auth="guest">Log In</a>
+        <a href="dashboard.html" class="btn btn-yellow" data-auth="user" style="display:none;">Go to dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="preview-hero" id="previewContent">
+    <div class="container preview-hero-grid">
+      <div>
+        <div class="preview-thumb"><img id="previewImg" src="" alt=""></div>
+        <h1 id="previewTitle">—</h1>
+        <div class="preview-meta">
+          <span><i class="fa-solid fa-user"></i> <span id="previewInstructor">—</span></span>
+          <span><i class="fa-solid fa-tag"></i> <span id="previewCategory">—</span></span>
+          <span><i class="fa-solid fa-signal"></i> <span id="previewLevel">—</span></span>
+          <span><i class="fa-brands fa-youtube"></i> <span id="previewLessons">—</span></span>
+        </div>
+        <p class="preview-desc" id="previewDesc"></p>
+
+        <div class="preview-cta-row">
+          <a href="#" class="btn btn-yellow btn-lg" id="startBtn"><i class="fa-solid fa-play"></i> Start Course</a>
+          <button type="button" class="btn btn-outline-navy" id="saveBtn"><i class="fa-regular fa-bookmark"></i> <span>Save for later</span></button>
+        </div>
+        <p class="preview-auth-hint" id="previewAuthHint">Already have an account? <a href="#" id="previewLogin">Log in</a> to enroll.</p>
+      </div>
+      <div class="preview-stats">
+        <div><span>Total lessons</span><strong id="statLessons">—</strong></div>
+        <div><span>Total duration</span><strong id="statDuration">—</strong></div>
+        <div><span>Rating</span><strong id="statRating">—</strong></div>
+        <div><span>Your course slots</span><strong>3 max</strong></div>
+        <div><span>Cost</span><strong id="statCost">Free</strong></div>
+      </div>
+    </div>
+    <p class="preview-premium-note hidden" id="previewPremiumNote">
+      <i class="fa-solid fa-lock"></i> Premium course — one-time purchase for lifetime access, progress tracking, and certificate.
+    </p>
+  </section>
+
+  <section class="preview-body">
+    <div class="container preview-sections">
+      <div class="preview-section">
+        <h2 class="roadmap-title">What you'll learn</h2>
+        <ul class="preview-learn-list" id="previewLearn"></ul>
+      </div>
+
+      <div class="preview-section">
+        <h2 class="roadmap-title">Curriculum</h2>
+        <p class="preview-curriculum-note">Lesson 1 is free to preview. Unlock the full course when you start.</p>
+        <div class="curriculum-list" id="previewCurriculum"></div>
+      </div>
+
+      <div class="preview-section">
+        <h2 class="roadmap-title">Course roadmap</h2>
+        <div class="roadmap-list" id="previewRoadmap"></div>
+      </div>
+
+      <div class="preview-footer-actions">
+        <a href="index.html" class="btn btn-outline-navy"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+        <a href="#" class="btn btn-yellow" id="startBtnBottom">Start Course</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container player-not-found hidden" id="previewNotFound" style="padding:80px 20px;text-align:center;">
+    <h2>Course not found</h2>
+    <a href="index.html" class="btn btn-yellow" style="margin-top:20px;">Back to home</a>
+  </div>
+
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/course-meta.js"></script>
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/payments.js"></script>
+  <script src="js/course-preview.js"></script>
+</body>
+</html>

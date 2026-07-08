@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <meta name="description" content="Barwaaqo Skills — online learning for Somalia and the diaspora. Navy + yellow ed-tech design.">
+  <title>Barwaaqo Skills — Learn Anytime, Anywhere</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="home-page">
+
+  <!-- 1. HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="logo-text">
+          <strong>Barwaaqo Skills</strong>
+          <small>Learn Anytime, Anywhere</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="courses.html" data-nav-courses>Courses</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#how-it-works">How It Works</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost" data-auth="guest">Log In</a>
+        <a href="signup.html" class="btn btn-yellow" data-auth="guest">Sign Up</a>
+        <a href="lms.html" class="btn btn-outline-navy btn-sm" data-nav-admin data-auth="admin" style="display:none;"><i class="fa-solid fa-shield-halved"></i> Admin panel</a>
+        <a href="dashboard.html" class="btn btn-yellow" data-nav-dashboard data-auth="user" data-hide-admin style="display:none;">Dashboard</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content bs-reveal-left">
+        <p class="hero-welcome">Welcome to Barwaaqo Skills</p>
+        <h1>Learn Skills. Advance Your <span class="text-yellow">Future.</span></h1>
+        <p>Access high-quality courses from experts and learn at your own pace. Anytime, anywhere.</p>
+
+        <div class="hero-btns">
+          <a href="signup.html" class="btn btn-yellow btn-lg">Get Started Free <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#how-it-works" class="btn btn-outline-white btn-lg"><i class="fa-solid fa-play"></i> How It Works</a>
+        </div>
+
+        <p class="hero-deploy-links">
+          <a href="https://bintmohamed417.github.io/barwaaqo-skills/" target="_blank" rel="noopener">View live site</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/bintmohamed417/barwaaqo-skills" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        </p>
+
+        <div class="hero-social">
+          <p id="heroSocialProof">Join 2,500+ learners building real skills on Barwaaqo Skills.</p>
+        </div>
+
+        <div class="hero-metrics bs-reveal-scale" style="--reveal-delay:0.2s" aria-label="Platform highlights">
+          <div class="hero-metric">
+            <strong id="statStudents" data-count="2500+">2,500+</strong>
+            <span>Learners</span>
+          </div>
+          <div class="hero-metric">
+            <strong id="statCourses" data-count="25">25</strong>
+            <span>Courses</span>
+          </div>
+          <div class="hero-metric">
+            <strong id="statFree" data-count="25">25</strong>
+            <span>Free courses</span>
+          </div>
+          <div class="hero-metric">
+            <strong id="statCompleted" data-count="120">120+</strong>
+            <span>Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual bs-reveal-right" style="--reveal-delay:0.12s">
+        <div class="hero-photo">
+          <img
+            src="img/hero-student.jpg"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80';"
+            alt="Young woman learning online with laptop and headphones"
+            width="900"
+            height="1000"
+            loading="eager"
+            decoding="async"
+          >
+          <div class="hero-overlays">
+            <div class="float-card progress-card" id="heroProgressCard">
+              <div class="progress-card-head">
+                <span>Your Progress</span>
+                <strong id="heroProgressPct">0%</strong>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" id="heroProgressFill" style="width:0%"></div></div>
+              <p class="progress-card-note" id="heroProgressNote">Pick a free course and begin.</p>
+            </div>
+            <div class="float-card lesson-card lesson-card--static" id="heroLessonCard">
+              <div class="lesson-icon"><i class="fa-solid fa-play"></i></div>
+              <div>
+                <span class="lesson-label">Featured course</span>
+                <strong id="heroLessonTitle">UI/UX Design Fundamentals</strong>
+                <span class="lesson-meta" id="heroLessonMeta">Lesson 1 of 5 · Start free today</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features strip (under hero) -->
+  <section class="features-bar" id="features">
+    <div class="container">
+      <div class="features-grid bs-reveal-scale" data-reveal-stagger=".feature-item">
+        <div class="feature-item bs-reveal-child">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div>
+            <h3>Expert Instructors</h3>
+            <p>Learn from industry experts and professionals.</p>
+          </div>
+        </div>
+        <div class="feature-item bs-reveal-child">
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <h3>Learn at Your Pace</h3>
+            <p>Study anytime, anywhere and at your own speed.</p>
+          </div>
+        </div>
+        <div class="feature-item bs-reveal-child">
+          <i class="fa-solid fa-chart-line"></i>
+          <div>
+            <h3>Track Progress</h3>
+            <p>XP, streaks, and a consistency graph keep you motivated.</p>
+          </div>
+        </div>
+        <div class="feature-item bs-reveal-child">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <h3>Community Support</h3>
+            <p>Join a community of learners and grow together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore by skill area (replaces standalone stats) -->
+  <section class="paths-section" id="paths">
+    <div class="container">
+      <div class="section-head bs-reveal">
+        <span class="section-tag">Skill areas</span>
+        <h2>Explore by Category</h2>
+        <p>Coding, design, business, and personal growth — pick any course once you sign up.</p>
+      </div>
+
+      <div class="paths-grid" data-reveal-stagger=".path-card">
+        <a href="signup.html" class="path-card bs-reveal-child">
+          <span class="path-icon"><i class="fa-solid fa-code"></i></span>
+          <h3>Coding & Tech</h3>
+          <p>Web, mobile, data, and DevOps skills for modern careers.</p>
+          <span class="path-link">Explore coding <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="signup.html" class="path-card bs-reveal-child">
+          <span class="path-icon"><i class="fa-solid fa-palette"></i></span>
+          <h3>Design & Creative</h3>
+          <p>UI/UX, graphics, and visual tools employers value.</p>
+          <span class="path-link">Explore design <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="signup.html" class="path-card bs-reveal-child">
+          <span class="path-icon"><i class="fa-solid fa-chart-line"></i></span>
+          <h3>Business & Career</h3>
+          <p>Marketing, finance, and skills to grow your work.</p>
+          <span class="path-link">Explore business <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <a href="signup.html" class="path-card bs-reveal-child">
+          <span class="path-icon"><i class="fa-solid fa-seedling"></i></span>
+          <h3>Personal Growth</h3>
+          <p>Communication, productivity, and lifelong learning habits.</p>
+          <span class="path-link">Explore personal <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FEATURED COURSES -->
+  <section class="courses-section" id="courses">
+    <div class="container">
+      <div class="section-head bs-reveal">
+        <span class="section-tag">Featured</span>
+        <h2>Featured Courses</h2>
+        <p>Preview our top free courses below — visit the catalog when you're ready to enroll.</p>
+      </div>
+
+      <div class="courses-grid courses-grid--home courses-grid--preview" id="featuredCourses" data-reveal-stagger=".course-card--static"></div>
+
+      <div class="courses-cta bs-reveal">
+        <a href="signup.html" class="btn btn-navy btn-lg" data-auth="guest">Get started free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHY CHOOSE US -->
+  <section class="why-section" id="why-us">
+    <div class="container why-grid">
+      <div class="why-content bs-reveal-left">
+        <span class="section-tag">Why Barwaaqo Skills?</span>
+        <h2>Learn Smarter. Grow Faster.</h2>
+        <p>We combine expert-led courses, practical projects, and career guidance to help you become job-ready.</p>
+
+        <ul class="why-list">
+          <li class="bs-reveal" style="--reveal-delay:0.1s">
+            <span class="why-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <div>
+              <strong>Project-Based Learning</strong>
+              <span>Build real projects instead of watching endless videos.</span>
+            </div>
+          </li>
+          <li class="bs-reveal" style="--reveal-delay:0.2s">
+            <span class="why-icon"><i class="fa-solid fa-briefcase"></i></span>
+            <div>
+              <strong>Career-Ready Skills</strong>
+              <span>Learn the exact skills employers are looking for.</span>
+            </div>
+          </li>
+          <li class="bs-reveal" style="--reveal-delay:0.3s">
+            <span class="why-icon"><i class="fa-solid fa-bolt"></i></span>
+            <div>
+              <strong>XP & Consistency</strong>
+              <span>Earn XP per lesson and build a GitHub-style learning streak.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-visual bs-reveal-right" style="--reveal-delay:0.1s">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Students collaborating">
+        <div class="why-stat-card bs-reveal-scale" style="--reveal-delay:0.25s">
+          <h3 id="statEnrollments" data-count="2500+">2,500+</h3>
+          <p>Total enrollments on the platform</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HOW IT WORKS -->
+  <section class="journey-section" id="how-it-works">
+    <div class="container">
+      <div class="section-head bs-reveal">
+        <span class="section-tag">How it works</span>
+        <h2>From First Click to Mastery</h2>
+        <p>A clear learning path built for students in Somalia and the diaspora — preview courses free, sign up to enroll, and track your growth.</p>
+      </div>
+
+      <div class="journey-track bs-reveal" data-reveal-stagger=".journey-step">
+        <article class="journey-step bs-reveal-child">
+          <span class="journey-num">1</span>
+          <div class="journey-icon"><i class="fa-solid fa-compass"></i></div>
+          <h3>Explore courses</h3>
+          <p>Browse 25 career-focused courses — all free. Preview lessons before you sign up.</p>
+          <a href="signup.html" class="journey-link">Get started <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <article class="journey-step bs-reveal-child">
+          <span class="journey-num">2</span>
+          <div class="journey-icon"><i class="fa-solid fa-user-plus"></i></div>
+          <h3>Sign up & enroll</h3>
+          <p>Create a free account, verify your email, and enroll in up to 3 courses at a time.</p>
+          <a href="signup.html" class="journey-link">Create account <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <article class="journey-step bs-reveal-child">
+          <span class="journey-num">3</span>
+          <div class="journey-icon"><i class="fa-solid fa-laptop"></i></div>
+          <h3>Learn on your dashboard</h3>
+          <p>Watch lessons, mark progress, and resume exactly where you left off — synced to your account.</p>
+          <a href="login.html" class="journey-link">Log in to learn <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <article class="journey-step bs-reveal-child">
+          <span class="journey-num">4</span>
+          <div class="journey-icon"><i class="fa-solid fa-fire"></i></div>
+          <h3>Level up</h3>
+          <p>Complete lessons to earn XP, keep your streak alive, and see your consistency grow on your dashboard.</p>
+          <a href="signup.html" class="journey-link">Start learning <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+
+      <div class="journey-cta bs-reveal">
+        <a href="signup.html" class="btn btn-yellow btn-lg" data-auth="guest">Get started free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="cta-box bs-reveal">
+        <div class="cta-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="cta-text">
+          <h2>Start Your Learning Journey Today</h2>
+          <p id="ctaSubtext">Create a free account to enroll in all 25 courses, track progress, and earn XP.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="signup.html" class="btn btn-yellow btn-lg" id="ctaSignup" data-auth="guest">Sign up free</a>
+          <a href="dashboard.html" class="btn btn-yellow btn-lg" id="ctaUser" data-auth="user" data-hide-admin>Go to dashboard</a>
+          <a href="lms.html" class="btn btn-yellow btn-lg" id="ctaAdmin" data-auth="admin">Open admin panel</a>
+        </div>
+        <span class="cta-note"><i class="fa-solid fa-circle-check"></i> Every course is free for signed-up learners</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <div class="footer-brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <strong>Barwaaqo Skills</strong>
+          </div>
+          <p>Empowering learners across Somalia and beyond with practical, career-focused education.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/bintmohamed417/barwaaqo-skills" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <nav class="footer-links" data-footer-platform aria-label="Platform links">
+            <a href="courses.html">Browse Courses</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#paths">Skill Paths</a>
+            <a href="login.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#why-us">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+          <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <nav class="footer-links" data-footer-support aria-label="Support links">
+            <a href="faq.html">FAQ &amp; Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Barwaaqo Skills. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/site-footer.js"></script>
+  <script src="js/data/courses.js"></script>
+  <script src="js/lib/course-meta.js"></script>
+  <script src="js/lib/courses-loader.js"></script>
+  <script src="js/lib/progress.js"></script>
+  <script src="js/lib/payments.js"></script>
+  <script src="js/lib/toast.js"></script>
+  <script src="js/lib/render-courses.js"></script>
+  <script>
+    function loadHomeCourses() {
+      const el = document.getElementById("featuredCourses");
+      if (!el || !window.getHomeCourses || !window.renderHomeCourseCard) return;
+
+      const courses = window.getHomeCourses();
+      if (!courses.length) {
+        el.innerHTML =
+          '<p class="courses-empty-msg">No featured courses yet. Start the Django API (<code>runserver 8765</code>) and refresh.</p>';
+        return;
+      }
+
+      el.innerHTML = courses.map((c) => window.renderHomeCourseCard(c)).join("");
+      el.querySelectorAll(".course-card--static").forEach((card) => {
+        card.classList.add("bs-revealed");
+      });
+      window.BSHomeReveal?.refresh?.();
+    }
+    document.addEventListener("courses:ready", loadHomeCourses);
+    document.addEventListener("courses:updated", loadHomeCourses);
+    if (window.__coursesReady) loadHomeCourses();
+    window.BSAuth?.onReady(() => {
+      loadHomeCourses();
+      window.BSAuth._updateNav();
+    });
+  </script>
+  <script src="js/home-reveal.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

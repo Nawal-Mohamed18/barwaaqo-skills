@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1D33">
+  <title>FAQ — Barwaaqo Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="logo-text">
+          <strong>Barwaaqo Skills</strong>
+          <small>Learn Anytime, Anywhere</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="courses.html" data-nav-courses>Courses</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#how-it-works">How It Works</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost" data-auth="guest">Log In</a>
+        <a href="signup.html" class="btn btn-yellow" data-auth="guest">Sign Up</a>
+        <a href="dashboard.html" class="btn btn-ghost" data-nav-dashboard data-auth="user" style="display:none;">Dashboard</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="faq-section page-faq bs-fade-in-up" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">FAQ</span>
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know before you start learning.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Do I need prior experience to start?</summary>
+          <p>No. Many of our courses are beginner-friendly and designed to take you from zero to job-ready step by step.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does XP work?</summary>
+          <p>You earn 10 XP for each lesson you complete and 100 XP when you finish a full course. Your total XP appears on your dashboard.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I learn at my own pace?</summary>
+          <p>Absolutely. All courses are self-paced so you can study whenever it fits your schedule.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are courses really free?</summary>
+          <p>Yes. All 25 courses are free for signed-up learners. Create an account, verify your email, and enroll in up to 3 courses at a time.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many courses can I take at once?</summary>
+          <p>You can actively enroll in up to 3 courses at a time. Finish a course or leave one from My Courses to free a slot.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <div class="footer-brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <strong>Barwaaqo Skills</strong>
+          </div>
+          <p>Empowering learners across Somalia and beyond with practical, career-focused education.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <nav class="footer-links" data-footer-platform aria-label="Platform links">
+            <a href="courses.html">Browse Courses</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#paths">Skill Paths</a>
+            <a href="login.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="index.html#why-us">About Us</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <nav class="footer-links" data-footer-support aria-label="Support links">
+            <a href="faq.html">FAQ &amp; Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Barwaaqo Skills. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/navigation.js"></script>
+  <script src="js/lib/site-footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

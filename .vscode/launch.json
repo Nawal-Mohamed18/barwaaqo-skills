@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Barwaaqo Skills (API + Frontend)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "echo Open http://localhost:8080/index.html after both terminals start."],
+      "preLaunchTask": "Run Barwaaqo Skills (API + Frontend)"
+    },
+    {
+      "name": "Django API only",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/manage.py",
+      "args": ["runserver", "8765"],
+      "django": true,
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe"
+    }
+  ]
+}

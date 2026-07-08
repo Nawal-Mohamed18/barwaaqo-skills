@@ -1,0 +1,177 @@
+/* Barwaaqo Skills — motion & transitions */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+
+  body.bs-loaded .bs-fade-in {
+    animation: bsFadeIn 0.55s ease both;
+  }
+
+  body.bs-loaded .bs-fade-in-up {
+    animation: bsFadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  body.bs-loaded .bs-stagger > * {
+    animation: bsFadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  body.bs-loaded .bs-stagger > *:nth-child(1) { animation-delay: 0.04s; }
+  body.bs-loaded .bs-stagger > *:nth-child(2) { animation-delay: 0.1s; }
+  body.bs-loaded .bs-stagger > *:nth-child(3) { animation-delay: 0.16s; }
+  body.bs-loaded .bs-stagger > *:nth-child(4) { animation-delay: 0.22s; }
+  body.bs-loaded .bs-stagger > *:nth-child(5) { animation-delay: 0.28s; }
+  body.bs-loaded .bs-stagger > *:nth-child(6) { animation-delay: 0.34s; }
+
+  .btn,
+  .dash-nav a,
+  .nav a,
+  .dash-continue,
+  .dash-stat,
+  .dash-course-card,
+  .faq-item,
+  .profile-card,
+  .learn-lesson-item,
+  .feature-item,
+  .stat-card,
+  .course-card,
+  .price-card,
+  .path-card,
+  .journey-step {
+    transition:
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s ease,
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+
+  .btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .dash-continue:hover,
+  .dash-stat:hover,
+  .dash-course-card:hover,
+  .learn-lesson-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .faq-item[open] summary {
+    color: var(--navy);
+  }
+
+  .dash-progress-fill,
+  .dash-progress-fill--accent {
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .header {
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+
+  .dash-sidebar .dash-nav a {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dash-sidebar .dash-nav a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 196, 0, 0.08), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  .dash-sidebar .dash-nav a:hover::before {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes bsFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bsFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .bs-reveal-left.bs-revealed,
+  .bs-reveal-right.bs-revealed,
+  .bs-reveal-scale.bs-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Scroll reveal */
+.bs-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.bs-reveal.bs-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bs-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.bs-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.bs-reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.bs-reveal-left.bs-revealed,
+.bs-reveal-right.bs-revealed,
+.bs-reveal-scale.bs-revealed {
+  opacity: 1;
+  transform: none;
+}
