@@ -539,10 +539,10 @@ window.BARWAAQO_COURSES = [
     title: "HR Management Fundamentals",
     description: "Recruiting, onboarding, employee relations, and building strong teams in any organization.",
     category: "Personal",
-    instructor: "freeCodeCamp",
+    instructor: "Leaders Talk / GreggU",
     instructorAvatar: "https://i.pravatar.cc/40?img=30",
-    playlistId: "PL530F7064821C58D9",
-    thumbnailVideoId: "k2C5TjS2sh4",
+    playlistId: "",
+    thumbnailVideoId: "c1npicEPaHw",
     rating: 4.5,
     reviewCount: 480,
     badge: null,
@@ -550,10 +550,10 @@ window.BARWAAQO_COURSES = [
     featured: false,
     free: true,
     lessons: [
-      { id: 1, title: "Human Resource Management", videoId: "k2C5TjS2sh4", duration: "1:30:00" },
-      { id: 2, title: "Business Communication", videoId: "8S0FDjFBj8o", duration: "18:20" },
-      { id: 3, title: "Presentation Skills", videoId: "Unzc731iCUY", duration: "9:58" },
-      { id: 4, title: "Overcoming Stage Fright", videoId: "M3aw2ih626s", duration: "8:30" }
+      { id: 1, title: "Complete HR Management Crash Course", videoId: "c1npicEPaHw", duration: "1:49:00" },
+      { id: 2, title: "HR Basics: Recruitment", videoId: "CNU2ZMOnf1I", duration: "7:11" },
+      { id: 3, title: "HR Basics: Onboarding", videoId: "kWcHPKNjuFU", duration: "7:28" },
+      { id: 4, title: "HR Basics: Employee Relations", videoId: "j2WsfhSIEHI", duration: "8:21" }
     ]
   }
 ];
