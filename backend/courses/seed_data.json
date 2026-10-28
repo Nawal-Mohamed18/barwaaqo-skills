@@ -1654,10 +1654,10 @@
     "title": "HR Management Fundamentals",
     "description": "Recruiting, onboarding, employee relations, and building strong teams in any organization.",
     "category": "Personal",
-    "instructor": "Leaders Talk / GreggU",
+    "instructor": "GreggU",
     "instructorAvatar": "https://i.pravatar.cc/40?img=30",
     "playlistId": "",
-    "thumbnailVideoId": "c1npicEPaHw",
+    "thumbnailVideoId": "bl71E1UpOxo",
     "rating": 4.5,
     "reviewCount": 480,
     "badge": null,
@@ -1667,9 +1667,9 @@
     "lessons": [
       {
         "id": 1,
-        "title": "Complete HR Management Crash Course",
-        "videoId": "c1npicEPaHw",
-        "duration": "1:49:00"
+        "title": "Human Resource Management",
+        "videoId": "bl71E1UpOxo",
+        "duration": "16:43"
       },
       {
         "id": 2,
