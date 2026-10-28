@@ -20,7 +20,19 @@ window.BSAPI = {
     const token = this.getToken();
     if (token) headers.Authorization = `Bearer ${token}`;
 
-    const res = await fetch(url, { ...options, headers });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    let res;
+    try {
+      res = await fetch(url, { ...options, headers, signal: controller.signal });
+    } catch (error) {
+      if (controller.signal.aborted) {
+        throw new Error("The server is taking too long to respond. Please try again.");
+      }
+      throw error;
+    } finally {
+      clearTimeout(timeout);
+    }
     let data = null;
     const text = await res.text();
     if (text) {
@@ -89,8 +101,14 @@ window.BSAPI = {
 
     try {
       const url = `${base.replace(/\/$/, "")}/health/`;
-      const res = await fetch(url, { method: "GET" });
-      return res.ok;
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      try {
+        const res = await fetch(url, { method: "GET", signal: controller.signal });
+        return res.ok;
+      } finally {
+        clearTimeout(timeout);
+      }
     } catch {
       return false;
     }

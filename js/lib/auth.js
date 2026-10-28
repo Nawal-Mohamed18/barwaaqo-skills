@@ -112,14 +112,11 @@ window.BSAuth = {
   },
 
   async signUp(name, email, password) {
-    if (!this.apiEnabled) {
-      throw new Error("We couldn't reach the server. Please try again in a moment.");
-    }
-    const result = await window.BSAPI.post("/auth/signup/", {
+    const result = await this._postWithRetry("/auth/signup/", {
       name,
       email,
       password,
-    });
+    }, 3);
     if (result.verify_url) {
       sessionStorage.setItem(
         "barwaaqo_pending_verify",
@@ -130,10 +127,7 @@ window.BSAuth = {
   },
 
   async signIn(email, password) {
-    if (!this.apiEnabled) {
-      throw new Error("We couldn't reach the server. Please try again in a moment.");
-    }
-    const result = await window.BSAPI.post("/auth/login/", { email, password });
+    const result = await this._postWithRetry("/auth/login/", { email, password }, 3);
     window.BSAPI.setToken(result.access);
     this.user = {
       uid: result.user.uid,
