@@ -31,7 +31,9 @@ def _user_payload(user, request=None):
 
 def _send_verification_email(user, request):
     token = user.issue_verify_token()
-    frontend = settings.FRONTEND_URL.rstrip("/")
+    origin = request.headers.get("Origin", "").rstrip("/")
+    allowed_origins = getattr(settings, "CORS_ALLOWED_ORIGINS", [])
+    frontend = origin if origin in allowed_origins or settings.DEBUG else settings.FRONTEND_URL.rstrip("/")
     verify_url = f"{frontend}/verify-email.html?email={user.email}&token={token}"
     send_mail(
         subject="Verify your Barwaaqo Skills account",

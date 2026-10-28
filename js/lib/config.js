@@ -7,6 +7,10 @@
   };
 
   function defaultApiBase() {
+    const localHosts = ["localhost", "127.0.0.1"];
+    if (localHosts.includes(window.location.hostname)) {
+      return "http://127.0.0.1:8000/api";
+    }
     return deploy.API_BASE || `${window.location.origin}/api`;
   }
 
